@@ -1,0 +1,27 @@
+Manual install (for now)
+
+apt update
+apt ugprade
+
+reboot
+
+apt install python3-pip git python3-pyaudio python3-scipy
+
+pip3 install sa818
+
+git clone https://github.com/waveshare/WM8960-Audio-HAT
+cd WM8960-Audio-HAT/
+
+./install.sh
+
+(boot/config.txt -> dtoverlay=vc4-kms-v3d,noaudio)
+(enable_uart=1)
+
+reboot
+
+
+
+
+
+
+

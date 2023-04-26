@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sa818 volume --level 1
+#sa818 radio --frequency 146.000 --squelch 4
+sa818 radio --frequency 430.000 --squelch 4
+sa818 filters --emphasis no --highpass no --lowpass no
+
+# audio to radio Module
+amixer set 'Headphone' 80%
+# audio from radio Module
+amixer set 'Capture' 15%
+
+# PTT
+raspi-gpio set 16 op
+# COS
+raspi-gpio set 12 ip
