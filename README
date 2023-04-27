@@ -15,7 +15,7 @@ cd WM8960-Audio-HAT/
 ./install.sh
 
 (boot/config.txt -> dtoverlay=vc4-kms-v3d,noaudio)
-(enable_uart=1)
+(enable_uart=1 in config.txt and tty1 instead of ama in cmdline.txt) (or via raspi-config)
 
 reboot
 
