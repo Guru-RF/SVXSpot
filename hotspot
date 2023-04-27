@@ -10,8 +10,3 @@ sa818 filters --emphasis no --highpass no --lowpass no
 amixer set 'Headphone' 80%
 # audio from radio Module
 amixer set 'Capture' 15%
-
-# PTT
-raspi-gpio set 16 op
-# COS
-raspi-gpio set 12 ip
