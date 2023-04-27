@@ -9,6 +9,13 @@ apt install python3-pip git python3-pyaudio python3-scipy
 
 pip3 install sa818
 
+cp hotspot /usr/sbin
+chmod a+x /usr/sbin/hotspot
+
+cp hotspot.service /etc/systemd/system/
+systemctl enable hotspot
+systemctl start hotspot
+
 git clone https://github.com/waveshare/WM8960-Audio-HAT
 cd WM8960-Audio-HAT/
 
@@ -47,10 +54,10 @@ tar -xvjf svxlink-sounds-en_US-heather-16k-19.09.tar.bz2
 rm *.tar.bz2
 ln -s en_US-heather-16k/ en_US
 
-#systemctl enable svxlink_gpio_setup
+systemctl enable svxlink_gpio_setup
 systemctl enable svxlink
 
-#systemctl start svxlink_gpio_setup.service
+systemctl start svxlink_gpio_setup.service
 systemctl start svxlink.service
 
 
