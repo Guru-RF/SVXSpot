@@ -2,7 +2,8 @@
 
 sa818 volume --level 1
 #sa818 radio --frequency 146.000 --squelch 4
-sa818 radio --frequency 430.000 --squelch 4
+#sa818 radio --frequency 430.000 --squelch 4
+sa818 radio --frequency 145.025 --ctcss 94.8,127.3
 sa818 filters --emphasis no --highpass no --lowpass no
 
 # audio to radio Module
