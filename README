@@ -12,7 +12,7 @@ pip3 install sa818
 cp hotspot /usr/sbin
 chmod a+x /usr/sbin/hotspot
 
-cp hotspot.service /etc/systemd/system/
+cp hotspot.service /lib/systemd/system/hotspot.service
 systemctl enable hotspot
 systemctl start hotspot
 
@@ -55,6 +55,11 @@ rm *.tar.bz2
 ln -s en_US-heather-16k/ en_US
 
 cp svxlink_rotate /usr/sbin
+chmod a+x /usr/sbin/svxlink_rotate
+
+ln -s /usr/sbin/svxlink_rotate /etc/cron.daily/svxlink_rotate
+
+cp svxlink.service /lib/systemd/system/svxlink.service
 
 systemctl enable svxlink_gpio_setup
 systemctl enable svxlink
