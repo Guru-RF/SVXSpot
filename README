@@ -19,7 +19,6 @@ cd WM8960-Audio-HAT/
 
 reboot
 
-
 apt install build-essential g++ make cmake libsigc++-2.0-dev php8.0 libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet -y
 
 groupadd svxlink
@@ -30,16 +29,29 @@ usermod -aG gpio svxlink
 git clone https://github.com/sm0svx/svxlink.git
 mkdir svxlink/src/build
 
+cd svxlink/src/build/
+
 cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc \ -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON  ..
 make
 make doc
 make install
 	
 cd /usr/share/svxlink/events.d
-mkdir local
-mv *.tcl ./local
+ln -s . local
 
 ldconfig
+
+cd /usr/share/svxlink/sounds
+wget https://github.com/sm0svx/svxlink-sounds-en_US-heather/releases/download/19.09/svxlink-sounds-en_US-heather-16k-19.09.tar.bz2
+tar -xvjf svxlink-sounds-en_US-heather-16k-19.09.tar.bz2
+rm *.tar.bz2
+ln -s en_US-heather-16k/ en_US
+
+#systemctl enable svxlink_gpio_setup
+systemctl enable svxlink
+
+#systemctl start svxlink_gpio_setup.service
+systemctl start svxlink.service
 
 
 
