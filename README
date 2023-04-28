@@ -9,13 +9,6 @@ apt install python3-pip git python3-pyaudio python3-scipy
 
 pip3 install sa818
 
-cp hotspot /usr/sbin
-chmod a+x /usr/sbin/hotspot
-
-cp hotspot.service /lib/systemd/system/hotspot.service
-systemctl enable hotspot
-systemctl start hotspot
-
 git clone https://github.com/waveshare/WM8960-Audio-HAT
 cd WM8960-Audio-HAT/
 
@@ -23,6 +16,13 @@ cd WM8960-Audio-HAT/
 
 (boot/config.txt -> dtoverlay=vc4-kms-v3d,noaudio)
 (enable_uart=1 in config.txt and tty1 instead of ama in cmdline.txt) (or via raspi-config)
+
+cp hotspot /usr/sbin
+chmod a+x /usr/sbin/hotspot
+
+cp hotspot.service /lib/systemd/system/hotspot.service
+systemctl enable hotspot
+systemctl start hotspot
 
 reboot
 
