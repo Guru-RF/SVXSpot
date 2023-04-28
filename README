@@ -63,6 +63,9 @@ ln -s /usr/sbin/svxlink_rotate /etc/cron.daily/svxlink_rotate
 
 cp svxlink.service /lib/systemd/system/svxlink.service
 
+cat gpio.conf > /etc/svxlink/gpio.conf
+cat svxlink.conf > /etc/svxlink/svxlink.conf
+
 systemctl enable svxlink_gpio_setup
 systemctl enable svxlink
 
