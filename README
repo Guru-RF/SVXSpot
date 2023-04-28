@@ -65,6 +65,7 @@ cp svxlink.service /lib/systemd/system/svxlink.service
 
 cat gpio.conf > /etc/svxlink/gpio.conf
 cat svxlink.conf > /etc/svxlink/svxlink.conf
+cat svxlink_gpio_up > /usr/sbin/svxlink_gpio_up
 
 systemctl enable svxlink_gpio_setup
 systemctl enable svxlink
