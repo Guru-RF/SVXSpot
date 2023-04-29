@@ -22,6 +22,7 @@ perl -i -pe 's/console=serial0.115200//g'  /boot/cmdline.txt
 cp hotspot /usr/sbin
 chmod a+x /usr/sbin/hotspot
 
+# TODO! create a service file that does a oneshot /usr/sbin/hotspot
 cp hotspot.service /lib/systemd/system/hotspot.service
 systemctl enable hotspot
 systemctl start hotspot
