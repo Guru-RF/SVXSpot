@@ -19,13 +19,16 @@ cd WM8960-Audio-HAT/
 perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,noaudio/g' /boot/config.txt
 perl -i -pe 's/console=serial0.115200//g'  /boot/cmdline.txt
 
+# edit hotspot (set's frequency and other settings to the Radio Module)
+
 cp hotspot /usr/sbin
 chmod a+x /usr/sbin/hotspot
 
-# TODO! create a service file that does a oneshot /usr/sbin/hotspot
-cp hotspot.service /lib/systemd/system/hotspot.service
-systemctl enable hotspot
-systemctl start hotspot
+# Only need to run once the module has eeprom
+/usr/sbin/hotspot
+
+cp svxspot_volume /usr/sbin/svxspot_volume
+chmod a+x /usr/sbin/svxspot_volume
 
 reboot
 

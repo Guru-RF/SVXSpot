@@ -5,8 +5,3 @@ sa818 volume --level 1
 #sa818 radio --frequency 430.000 --squelch 4
 sa818 radio --frequency 145.025 --ctcss 94.8,94.8
 sa818 filters --emphasis no --highpass no --lowpass no
-
-# audio to radio Module
-amixer set 'Headphone' 80%
-# audio from radio Module
-amixer set 'Capture' 15%
