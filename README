@@ -19,7 +19,7 @@ cd WM8960-Audio-HAT/
 perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,noaudio/g' /boot/config.txt
 perl -i -pe 's/console=serial0.115200//g'  /boot/cmdline.txt
 
-systemctl disble serial-getty@ttyS0.service
+systemctl disable serial-getty@ttyS0.service
 
 # edit hotspot (set's frequency and other settings to the Radio Module)
 
