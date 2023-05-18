@@ -16,8 +16,15 @@ pip3 install sa818
 
 perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,noaudio/g' /boot/config.txt
 perl -i -pe 's/console=serial0.115200//g'  /boot/cmdline.txt
-grep -qxF 'dtoverlay=wm8960-soundcard' /boot/config.txt | echo "dtoverlay=wm8960-soundcard" >> /boot/config.txt
-grep -qxF 'enable_uart=1' /boot/config.txt | echo "enable_uart=1" >> /boot/config.txt
+grep -q 'dtoverlay=wm8960-soundcard' /boot/config.txt || echo "dtoverlay=wm8960-soundcard" >> /boot/config.txt
+grep -q 'enable_uart=1' /boot/config.txt || echo "enable_uart=1" >> /boot/config.txt
+echo "snd-soc-wm8960-soundcard" >> /etc/modules
+echo "i2c-dev" >> /etc/modules
+sed -i -e 's:#dtparam=i2c_arm=on:dtparam=i2c_arm=on:g'  /boot/config.txt || true
+grep -q "dtoverlay=i2s-mmap" /boot/config.txt || \
+  echo "dtoverlay=i2s-mmap" >> /boot/config.txt
+grep -q "dtparam=i2s=on" /boot/config.txt || \
+  echo "dtparam=i2s=on" >> /boot/config.txt
 
 systemctl disable serial-getty@ttyS0.service
 
