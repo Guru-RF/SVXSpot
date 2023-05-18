@@ -8,6 +8,7 @@ apt install python3-pip git python3-pyaudio python3-scipy
 pip3 install sa818
 
 # Install the audio interface driver
+# test audio files https://www2.cs.uic.edu/~i101/SoundFiles/
 git clone https://github.com/waveshare/WM8960-Audio-HAT
 cd WM8960-Audio-HAT/
 ./install.sh
