@@ -10,10 +10,7 @@ sudo bash install-radiomodule.sh
 sudo bash install-svxlink.sh
 ```
 
-[![SVXSpot](https://img.youtube.com/vi/PkB4cYMBg48/0.jpg)](https://www.youtube.com/watch?v=PkB4cYMBg48 "SVXSpot")
-
-
-
+{% include youtube.html id="PkB4cYMBg48" %}
 
 ###Manual install (for now)
 
