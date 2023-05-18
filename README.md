@@ -1,5 +1,4 @@
-# SVXSpot
-[RF.Guru SVXSpot](https://rf.guru/2023-k-041)
+# SVXSpot ([RF.Guru SVXSpot](https://rf.guru/2023-k-041))
 
 ### Install GIT  ###
 ```console
