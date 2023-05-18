@@ -9,9 +9,11 @@ sudo bash install-radiomodule.sh
 ```console
 sudo bash install-svxlink.sh
 ```
-{% raw %} 
-{% include youtube.html id="PkB4cYMBg48" %}
-{% endraw %}
+
+### SVXLink Hotspot in action ###
+[![Final video of fixing issues in your code in VS Code]
+(https://img.youtube.com/vi/PkB4cYMBg48/maxresdefault.jpg)]
+(https://www.youtube.com/watch?v=PkB4cYMBg48)
 
 ###Manual install (for now)
 
