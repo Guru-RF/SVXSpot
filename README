@@ -3,26 +3,25 @@ Manual install (for now)
 apt update
 apt ugprade
 
-reboot
-
 apt install python3-pip git python3-pyaudio python3-scipy
 
 pip3 install sa818
 
-reboot
 
-git clone https://github.com/waveshare/WM8960-Audio-HAT
-cd WM8960-Audio-HAT/
 
-./install.sh
+#git clone https://github.com/waveshare/WM8960-Audio-HAT
+#cd WM8960-Audio-HAT/
+
+#./install.sh
 
 perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,noaudio/g' /boot/config.txt
 perl -i -pe 's/console=serial0.115200//g'  /boot/cmdline.txt
+grep -qxF 'dtoverlay=wm8960-soundcard' /boot/config.txt | echo "dtoverlay=wm8960-soundcard" >> /boot/config.txt
+grep -qxF 'enable_uart=1' /boot/config.txt | echo "enable_uart=1" >> /boot/config.txt
 
 systemctl disable serial-getty@ttyS0.service
-systemctl disable hciuart.service
-systemctl disable bluealsa.service
-systemctl disable bluetooth.service
+
+reboot
 
 # edit hotspot (set's frequency and other settings to the Radio Module)
 
