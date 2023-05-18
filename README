@@ -1,10 +1,10 @@
 ###Manual install (for now)
 
-apt update
-apt ugprade
+apt -y update
+apt -y ugprade
 
 # Install the SA818 control software
-apt install python3-pip git python3-pyaudio python3-scipy
+apt -y install python3-pip git python3-pyaudio python3-scipy
 pip3 install sa818
 
 # Install the audio interface driver
@@ -12,6 +12,7 @@ pip3 install sa818
 git clone https://github.com/waveshare/WM8960-Audio-HAT
 cd WM8960-Audio-HAT/
 ./install.sh
+cd ..
 
 # Disable hdmi-audio and enable serial uart
 perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,noaudio/g' /boot/config.txt
