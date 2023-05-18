@@ -21,9 +21,6 @@ cd SVXSpot
 sudo bash install-radiomodule.sh
 ```
 
-[![asciicast](https://asciinema.org/a/bcedqjkAFzxlT6nS4eo3FGiYf.png)](https://asciinema.org/a/bcedqjkAFzxlT6nS4eo3FGiYf?speed=15&theme=solarized-dark&autoplay=1)
-
-
 ### SVXLink installation script ###
 ```console
 cd SVXSpot
