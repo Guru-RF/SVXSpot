@@ -9,8 +9,9 @@ sudo bash install-radiomodule.sh
 ```console
 sudo bash install-svxlink.sh
 ```
-
+{% raw %} 
 {% include youtube.html id="PkB4cYMBg48" %}
+{% endraw %}
 
 ###Manual install (for now)
 
