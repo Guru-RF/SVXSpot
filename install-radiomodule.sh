@@ -37,6 +37,8 @@ say "Enabling UART"
 run "grep -q 'enable_uart=1' /boot/config.txt || echo 'enable_uart=1' >> /boot/config.txt"
 say "Disabling serial getty"
 run 'systemctl disable serial-getty@ttyS0.service'
+say "Disabling wm8960-soundcard service"
+run 'systemctl disable wm8960-soundcard'
 
 say "Installing hotspot eeprom configurator"
 run "cp hotspot /usr/sbin"
