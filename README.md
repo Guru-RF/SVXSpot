@@ -11,9 +11,9 @@ sudo bash install-svxlink.sh
 ```
 
 ### SVXLink Hotspot in action ###
-[![Final video of fixing issues in your code in VS Code]
-(https://img.youtube.com/vi/PkB4cYMBg48/maxresdefault.jpg)]
-(https://www.youtube.com/watch?v=PkB4cYMBg48)
+https://github.com/Guru-RF/SVXSpot/assets/1251767/50dd4366-8439-4067-83b5-5866d0adca77
+
+
 
 ###Manual install (for now)
 
