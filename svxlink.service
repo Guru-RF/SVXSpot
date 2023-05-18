@@ -28,7 +28,7 @@ EnvironmentFile=/etc/default/svxlink
 PIDFile=${PIDFILE}
 ExecStartPre=-/bin/touch ${LOGFILE}
 ExecStartPre=-/bin/chown ${RUNASUSER} ${LOGFILE}
-ExecStartPre=-/usr/sbin/svxspot_volume
+ExecStartPre=-/usr/sbin/hotspot_volume
 ExecStart=/usr/bin/svxlink --logfile=${LOGFILE} --config=${CFGFILE} --pidfile=${PIDFILE} --runasuser=${RUNASUSER}
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
