@@ -67,6 +67,9 @@ run "systemctl enable svxlink"
 run "systemctl start svxlink_gpio_setup.service"
 run "systemctl start svxlink.service"
 
+say "Write Initial EEPROM settings to the radio module"
+run "/usr/sbin/hotspot"
+
 say "Svxlink config is in here: /etc/svxlink/svxlink.conf"
 
 
