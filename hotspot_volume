@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # audio to radio Module
-amixer set 'Headphone' 80%
+amixer set 'Headphone' 77%
 # audio from radio Module
-amixer set 'Capture' 16%
+amixer set 'Capture' 18%
