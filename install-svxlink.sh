@@ -79,7 +79,7 @@ say "You only need to run this once as the module has eeprom !"
 
 say "Svxlink config is in here: /etc/svxlink/svxlink.conf"
 
-sat "By default you can send dtmf tones D1# to the hotspot to activate te parrot"
+say "By default you can send dtmf tones D1# to the hotspot to activate te parrot"
 
 
 

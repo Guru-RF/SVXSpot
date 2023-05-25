@@ -40,6 +40,11 @@ cd ..
 # Disable hdmi-audio and enable serial uart
 say "Disabling HDMI audio"
 run "perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,noaudio/g' /boot/config.txt"
+say "Disabling Bluetooth"
+run "grep -q 'dtoverlay=disable-bt' /boot/config.txt || echo 'dtoverlay=disable-bt' >> /boot/config.txt"
+run "sudo systemctl disable hciuart.service"
+run "sudo systemctl disable bluealsa.service"
+run "sudo systemctl disable bluetooth.service"
 say "Disabling Serial Console"
 run "perl -i -pe 's/console=serial0.115200//g'  /boot/cmdline.txt"
 say "Enabling UART"
