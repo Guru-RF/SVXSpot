@@ -23,6 +23,9 @@ run "pip3 install sa818"
 
 say "Modify Locale"
 run "echo 'LANG=en_US.UTF-8' > /etc/default/locale"
+run "echo 'LC_CTYPE=en_US.UTF-8' >> /etc/default/locale"
+run "echo 'LC_MESSAGES=en_US.UTF-8' >> /etc/default/locale"
+run "echo 'LC_ALL=en_US.UTF-8' >> /etc/default/locale"
 run "locale-gen"
 
 say "Installing WM8960 audio intgerface"
