@@ -16,6 +16,10 @@ MYPATH=${PWD}
 say "Installing SVXLink Prerequisites"
 run "apt install build-essential g++ make cmake libsigc++-2.0-dev php8.0 libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet -y"
 
+say "Disabling apache"
+run "systemctl disable apache2"
+run "systemctl disable apache-htcacheclean"
+
 say "Adding svxlink user and groups"
 run "groupadd svxlink"
 run "useradd -g svxlink -d /etc/svxlink svxlink"
