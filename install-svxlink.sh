@@ -70,7 +70,12 @@ run "systemctl start svxlink.service"
 say "Write Initial EEPROM settings to the radio module"
 run "/usr/sbin/hotspot"
 
+say "Edit & rerun /usr/sbin/hotspot to change frequencies/ctcss etc .."
+say "You only need to run this once as the module has eeprom !"
+
 say "Svxlink config is in here: /etc/svxlink/svxlink.conf"
+
+sat "By default you can send dtmf tones D1# to the hotspot to activate te parrot"
 
 
 

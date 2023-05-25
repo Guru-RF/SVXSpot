@@ -50,9 +50,6 @@ run "chmod a+x /usr/sbin/hotspot"
 
 say "Installing hotspot_volume"
 run "cp hotspot_volume /usr/sbin/hotspot_volume"
-
-say "Edit & rerun /usr/sbin/hotspot to change frequencies/ctcss etc .."
-say "You only need to run this once as the module has eeprom !"
 run "chmod a+x /usr/sbin/hotspot_volume"
 
 say "Please reboot system."
