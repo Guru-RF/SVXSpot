@@ -21,6 +21,10 @@ run "apt -y install python3-pip git python3-pyaudio python3-scipy"
 say "Installing SA818 Control Software"
 run "pip3 install sa818"
 
+say "Modify Locale"
+run "echo 'LANG=en_US.UTF-8' > /etc/default/locale"
+run "locale-gen"
+
 say "Installing WM8960 audio intgerface"
 # test audio files https://www2.cs.uic.edu/~i101/SoundFiles/
 run "git clone https://github.com/waveshare/WM8960-Audio-HAT"
