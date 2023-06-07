@@ -68,4 +68,4 @@ say "Installing hotspot_volume"
 run "cp hotspot_volume /usr/sbin/hotspot_volume"
 run "chmod a+x /usr/sbin/hotspot_volume"
 
-say "Please reboot system."
+say "Please reboot system. (sudo reboot)"
