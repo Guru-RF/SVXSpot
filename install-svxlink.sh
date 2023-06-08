@@ -47,7 +47,7 @@ run "ldconfig"
 say "Installing svxlink sounds"
 run "cd /usr/share/svxlink/sounds"
 run 'git clone "https://github.com/sm0svx/svxlink-sounds-en_US-heather"'
-run "ln - svxlink-sounds-en_US-heather en_US"
+run "ln -s svxlink-sounds-en_US-heather en_US"
 
 cd ${MYPATH}
 say "Install svxlink_rotate"
