@@ -48,6 +48,8 @@ say "Installing svxlink sounds"
 run "cd /usr/share/svxlink/sounds"
 run 'git clone "https://github.com/sm0svx/svxlink-sounds-en_US-heather"'
 run "${MYPATH}/svxlink/src/svxlink/scripts/filter_sounds.sh -r 16000 filter_sounds.sh -r 16000 svxlink-sounds-en_US-heather en_US"
+run "rm -fr svxlink-sounds-en_US-heather"
+run "rm -f svxlink-sounds-en_US.tar.bz2"
 
 cd ${MYPATH}
 say "Install svxlink_rotate"
