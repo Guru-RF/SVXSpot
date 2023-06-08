@@ -57,6 +57,10 @@ run "cp svxlink_rotate /usr/sbin"
 run "chmod a+x /usr/sbin/svxlink_rotate"
 run "ln -s /usr/sbin/svxlink_rotate /etc/cron.daily/svxlink_rotate"
 
+say "Install svxlink_checkalsa"
+run "cp svxlink_checkalsa /usr/sbin"
+run "chmod a+x /usr/sbin/svxlink_checkalsa"
+
 say "Updating svxlink.service"
 run "cp svxlink.service /lib/systemd/system/svxlink.service"
 
