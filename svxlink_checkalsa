@@ -1,0 +1,12 @@
+#!/bin/bash
+
+VAL=1
+
+while [[ "${VAL}" != "0" ]]
+do
+        echo "Waiting for sound driver"
+        aplay -l | grep wm8960soundcard
+        VAL=$?
+        sleep 1
+done
+
