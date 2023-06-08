@@ -14,7 +14,7 @@ say () {
 MYPATH=${PWD}
 
 say "Installing SVXLink Prerequisites"
-run "apt install build-essential g++ make cmake libsigc++-2.0-dev php8.0 libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet -y"
+run "apt install build-essential g++ make cmake libsigc++-2.0-dev php8.0 libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet sox -y"
 
 say "Disabling apache"
 run "systemctl disable apache2"
@@ -47,7 +47,7 @@ run "ldconfig"
 say "Installing svxlink sounds"
 run "cd /usr/share/svxlink/sounds"
 run 'git clone "https://github.com/sm0svx/svxlink-sounds-en_US-heather"'
-run "ln -s svxlink-sounds-en_US-heather en_US"
+run "${MYPATH}/svxlink/src/svxlink/scripts/filter_sounds.sh -r 16000 filter_sounds.sh -r 16000 svxlink-sounds-en_US-heather en_US"
 
 cd ${MYPATH}
 say "Install svxlink_rotate"
