@@ -2,6 +2,8 @@
 
 VAL=1
 
+/usr/bin/wm8960-soundcard
+
 while [[ "${VAL}" != "0" ]]
 do
         echo "Waiting for sound driver"
@@ -10,3 +12,4 @@ do
         sleep 1
 done
 
+/usr/sbin/hotspot_volume
