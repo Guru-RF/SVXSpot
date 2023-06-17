@@ -2,6 +2,8 @@
 
 This board can also be used for analog ham radio experiments on the 2M and 70 cm radio bands.
 
+### SVXLink and Radiomodule install scripts:###
+
 Prepare your sd-card with Raspberry PI OS Lite ! ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
 
 Login to your system with ssh add run following commands:
