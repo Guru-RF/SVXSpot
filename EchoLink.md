@@ -37,4 +37,5 @@ systemctl restart svxlink
 Sending D2# dtmf on the configured frequency starts the connection to echlink and the configured node (in this case ON0WV)
 
 ### SVXLink Hotspot in action conecting to ON0WV via echolink ###
-https://github.com/Guru-RF/SVXSpot/assets/1251767/50dd4366-8439-4067-83b5-5866d0adca77
+https://github.com/Guru-RF/SVXSpot/assets/1251767/2393a44e-552e-46b1-ad00-26780c07270a
+
