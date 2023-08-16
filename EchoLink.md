@@ -1,6 +1,6 @@
 # SVXSpot an SVXLink Hotspot (2M/70CM) for the Raspberry Pi Zero ([RF.Guru SVXSpot](https://rf.guru/2023-k-041))
 
-EchoLink configuration example
+## EchoLink configuration example
 
 ### edit /etc/svxlink/svxlink.conf ###
 
@@ -12,10 +12,12 @@ TYPE=Simplex
 RX=Rx1
 TX=Tx1
 MODULES=ModuleParrot,ModuleEchoLink
+```
 
 modify the Macros portion (add another dtmf code to spawn echolink and connect to remote repeater nr, 
 in this case the famous ON0WV in Bruges):
 
+```console
 [Macros]
 1=Parrot:0123456789#
 2=EchoLink:357361#
