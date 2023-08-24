@@ -1,6 +1,6 @@
-# SVXSpot an SVXLink Hotspot (2M/70CM) for the Raspberry Pi Zero ([RF.Guru SVXSpot](https://rf.guru/2023-k-041))
+# SVXSpot an SVXLink Analog Hotspot 70CM (UHF) for the Raspberry Pi Zero ([RF.Guru SVXSpot](https://rf.guru/2023-k-041))
 
-This board can also be used for analog ham radio experiments on the 2M and 70 cm radio bands.
+This board can also be used for analog ham radio experiments on the 70cm ham radio bands.
 
 ### SVXLink and Radiomodule install scripts: ###
 

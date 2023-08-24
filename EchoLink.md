@@ -1,4 +1,4 @@
-# SVXSpot an SVXLink Hotspot (2M/70CM) for the Raspberry Pi Zero ([RF.Guru SVXSpot](https://rf.guru/2023-k-041))
+# SVXSpot an SVXLink Analog Hotspot 70CM (UHF) for the Raspberry Pi Zero ([RF.Guru SVXSpot](https://rf.guru/2023-k-041))
 
 ## EchoLink configuration example
 
