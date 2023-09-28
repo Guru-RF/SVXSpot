@@ -81,6 +81,8 @@ run "/usr/sbin/hotspot"
 say "Edit & rerun /usr/sbin/hotspot to change frequencies/ctcss etc .."
 say "You only need to run this once as the module has eeprom !"
 
+say "Edit & rerun /usr/sbin/hotspot_volume to modify rx/tx volume"
+
 say "Svxlink config is in here: /etc/svxlink/svxlink.conf"
 
 say "By default you can send dtmf tones D1# to the hotspot to activate te parrot"
