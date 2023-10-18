@@ -39,24 +39,26 @@ run "./install.sh"
 cd ..
 
 # Disable hdmi-audio and enable serial uart
+say "Disabling audio"
+run "perl -i -pe 's/dtparam=audio=on/dtparam=audio=off/g' /boot/firmware/config.txt"
 say "Disabling HDMI audio"
-run "perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,noaudio/g' /boot/config.txt"
+run "grep -q 'dtoverlay=vc4-kms-v3d,audio=off' /boot/firmware/config.txt || perl -i -pe 's/dtoverlay=vc4-kms-v3d/dtoverlay=vc4-kms-v3d,audio=off/g' /boot/firmware/config.txt"
 say "Disabling Bluetooth"
-run "grep -q 'dtoverlay=disable-bt' /boot/config.txt || echo 'dtoverlay=disable-bt' >> /boot/config.txt"
+run "grep -q 'dtoverlay=disable-bt' /boot/firmware/config.txt || echo 'dtoverlay=disable-bt' >> /boot/firmware/config.txt"
 run "sudo systemctl disable hciuart.service"
 run "sudo systemctl disable bluetooth.service"
 say "Disabling Serial Console"
-run "perl -i -pe 's/console=serial0.115200//g'  /boot/cmdline.txt"
+run "perl -i -pe 's/console=serial0.115200//g'  /boot/firmware/cmdline.txt"
 say "Enabling UART"
-run "grep -q 'enable_uart=1' /boot/config.txt || echo 'enable_uart=1' >> /boot/config.txt"
+run "grep -q 'enable_uart=1' /boot/firmware/config.txt || echo 'enable_uart=1' >> /boot/firmware/config.txt"
 say "Disabling serial getty"
 run 'systemctl disable serial-getty@ttyS0.service'
 say "Disabling wm8960-soundcard service"
 run 'systemctl disable wm8960-soundcard'
 
 say "Disabling ACT led"
-run "grep -q 'dtparam=act_led_trigger=none' /boot/config.txt || echo 'dtparam=act_led_trigger=none' >> /boot/config.txt"
-run "grep -q 'dtparam=act_led_activelow=on' /boot/config.txt || echo 'dtparam=act_led_activelow=on' >> /boot/config.txt"
+run "grep -q 'dtparam=act_led_trigger=none' /boot/firmware/config.txt || echo 'dtparam=act_led_trigger=none' >> /boot/firmware/config.txt"
+run "grep -q 'dtparam=act_led_activelow=on' /boot/firmware/config.txt || echo 'dtparam=act_led_activelow=on' >> /boot/firmware/config.txt"
 
 say "Disabling HDMI"
 run "perl -i -pe 's/^exit 0/\/usr\/bin\/tvservice -o; exit 0/g' /etc/rc.local"
