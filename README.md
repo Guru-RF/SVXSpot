@@ -32,6 +32,13 @@ cd SVXSpot
 sudo bash install-svxlink.sh
 ```
 
+### Tuning Input Volume ###
+```console
+systemctl stop svxlink
+arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null
+```
+
+
 ### Simple Test ###
 Sending D1# dtmf on the configured frequency starts the parrot.
 
