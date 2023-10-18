@@ -3,4 +3,4 @@
 # audio to radio Module
 amixer set 'Headphone' 70%
 # audio from radio Module
-amixer set 'Capture' 18%
+amixer set 'Capture' 15%
