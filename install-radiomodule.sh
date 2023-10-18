@@ -19,7 +19,7 @@ say "Installing Prerequisites"
 run "apt -y install python3-pip git python3-pyaudio python3-scipy"
 
 say "Installing SA818 Control Software"
-run "pip3 install sa818"
+run "pip3 --break-system-packages install sa818"
 
 say "Modify Locale"
 run "echo 'LANG=en_US.UTF-8' > /etc/default/locale"
