@@ -6,6 +6,8 @@ This board can also be used for analog ham radio experiments on the 70cm ham rad
 
 Prepare your sd-card with Raspberry PI OS Lite ! ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
 
+# WARNING! This works only with (bullseye) (Debian 11) Raspberry PI OS release !
+
 Login to your system with ssh add run following commands:
 
 ### Install GIT  ###
