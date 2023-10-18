@@ -40,6 +40,11 @@ systemctl stop svxlink
 arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null
 ```
 
+### Modifying the radio module ###
+(edit /usr/sbin/hotspot)
+```console
+vi /usr/sbin/hotspot
+```
 
 ### Simple Test ###
 Sending D1# dtmf on the configured frequency starts the parrot.
