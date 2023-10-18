@@ -33,8 +33,10 @@ sudo bash install-svxlink.sh
 ```
 
 ### Tuning Input Volume ###
+(modify hotspot_volume to the desired volume)
 ```console
 systemctl stop svxlink
+/sbin/hotspot_volume
 arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null
 ```
 
