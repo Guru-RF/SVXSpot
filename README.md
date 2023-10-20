@@ -4,7 +4,7 @@ This board can also be used for analog ham radio experiments on the 70cm ham rad
 
 ### SVXLink and Radiomodule install scripts: ###
 
-Prepare your sd-card with Raspberry PI OS ([Bookworm 32Bit Lite](https://downloads.raspberrypi.com/raspios_lite_armhf/images/raspios_lite_armhf-2023-10-10/2023-10-10-raspios-bookworm-armhf-lite.img.xz?_gl=1*1aerwlv*_ga*NDI3OTI4Mjk2LjE2OTYyNDM1NzI.*_ga_22FD70LWDS*MTY5NzgyNTUyMy42LjAuMTY5NzgyNTUyMy4wLjAuMA..)! ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
+Prepare your sd-card with Raspberry PI OS ([Bookworm 32Bit Lite](https://downloads.raspberrypi.com/raspios_lite_armhf/images/raspios_lite_armhf-2023-10-10/2023-10-10-raspios-bookworm-armhf-lite.img.xz?_gl=1*1aerwlv*_ga*NDI3OTI4Mjk2LjE2OTYyNDM1NzI.*_ga_22FD70LWDS*MTY5NzgyNTUyMy42LjAuMTY5NzgyNTUyMy4wLjAuMA..)) ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
 
 Login to your system with ssh add run following commands:
 
