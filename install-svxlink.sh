@@ -81,8 +81,16 @@ run "/usr/sbin/hotspot"
 say "Edit & rerun /usr/sbin/hotspot to change frequencies/ctcss etc .."
 say "You only need to run this once as the module has eeprom !"
 
+say ""
+
 say "Edit & rerun /usr/sbin/hotspot_volume to modify rx/tx volume"
-say "You can monitor clipping with this command (RX) arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null"
+say "You can monitor RX clipping with this command:"
+
+say ""
+
+say "sudo systemctl stop svxlink && sudo arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null"
+
+say ""
 
 say "Svxlink config is in here: /etc/svxlink/svxlink.conf"
 
