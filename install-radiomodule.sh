@@ -31,7 +31,7 @@ run "echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen"
 
 run "locale-gen"
 
-say "Installing WM8960 audio intgerface"
+say "Installing WM8960 audio interface"
 # test audio files https://www2.cs.uic.edu/~i101/SoundFiles/
 run "git clone https://github.com/waveshare/WM8960-Audio-HAT"
 cd WM8960-Audio-HAT/
