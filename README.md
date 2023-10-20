@@ -4,7 +4,7 @@ This board can also be used for analog ham radio experiments on the 70cm ham rad
 
 ### SVXLink and Radiomodule install scripts: ###
 
-Prepare your sd-card with Raspberry PI OS Lite ! ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
+Prepare your sd-card with Raspberry PI OS <b>Bookworm 32Bit Lite</b> ! ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
 
 # WARNING! We are in the mitst in upgrading this to bookworm. for now use the ([bullseye](https://github.com/Guru-RF/SVXSpot/tree/v1.11.0)) release !
 # clone with git clone --branch v1.11.0 https://github.com/Guru-RF/SVXSpot.git !!
