@@ -10,7 +10,17 @@ Those boards can also be used for analog ham radio experiments on the 70cm and 2
 
 [Bookworm 32Bit Lite 2023-11-10](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-10.img.gz)
 
-Use PI-Imager to modify WiFi settings !!!
+Use PI-Imager to create user and WiFi settings !!!
+
+After login to the hotspot with ssh and modify your credentials: (Change ON0RFG with your CALL and PASSWORD with your passowrd !)
+
+```console
+sudo perl -i -pe 's/--CALL--/ON0RFG/g' /etc/svxlink/svxlink.conf
+sudo perl -i -pe 's/--PWD--/PASSWORD/g' /etc/svxlink/svxlink.conf
+sudo systemctl restart svxlink
+```
+
+Then restart svxlink with systemctl restart svxlink
 
 # SVXLink and Radiomodule install scripts
 
