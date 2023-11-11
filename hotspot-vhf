@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sa818 --port /dev/ttyAMA0 volume --level 1
+sa818 --port /dev/ttyAMA0 radio --frequency 145.250 --squelch 4
+# --ctcss 94.8,94.8
+# https://www.iaru-r1.org/wp-content/uploads/2020/12/VHF-Bandplan.pdf
+sa818 --port /dev/ttyAMA0 filters --emphasis no --highpass no --lowpass no

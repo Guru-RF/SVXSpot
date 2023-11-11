@@ -64,8 +64,11 @@ say "Disabling HDMI"
 run "perl -i -pe 's/^exit 0/\/usr\/bin\/tvservice -o; exit 0/g' /etc/rc.local"
 
 say "Installing hotspot eeprom configurator"
-run "cp hotspot /usr/sbin"
-run "chmod a+x /usr/sbin/hotspot"
+run "cp hotspot-vhf /usr/sbin"
+run "cp hotspot-uhf /usr/sbin"
+run "chmod a+x /usr/sbin/hotspot-vhf"
+run "chmod a+x /usr/sbin/hotspot-uhf"
+run "ln -s /usr/sbin/hotspot-uhf /usr/sbin/hotspot"
 
 say "Installing hotspot_volume"
 run "cp hotspot_volume /usr/sbin/hotspot_volume"
