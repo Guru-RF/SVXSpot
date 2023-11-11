@@ -6,6 +6,10 @@
 
 Those boards can also be used for analog ham radio experiments on the 70cm and 2m ham radio bands.
 
+### SVXLink Bookworm Image ###
+([Bookworm 32Bit Lite 2023-11-10](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-10.img.gz)
+(use PI-Imager to modify WiFi settings !!!)
+
 ### SVXLink and Radiomodule install scripts: ###
 
 Prepare your sd-card with Raspberry PI OS ([Bookworm 32Bit Lite](https://www.raspberrypi.com/software/operating-systems/)) ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
