@@ -3,7 +3,7 @@
 sa818 --port /dev/ttyAMA0 volume --level 1
 sa818 --port /dev/ttyAMA0 radio --frequency 439.100 --squelch 4
 #https://www.iaru-r1.org/wp-content/uploads/2021/03/UHF-Bandplan.pdf
-#sa818 --port /dev/ttyAMA0 radio --frequency 145.2375 --squelch 4
+#sa818 --port /dev/ttyAMA0 radio --frequency 145.250 --squelch 4
 # https://www.iaru-r1.org/wp-content/uploads/2020/12/VHF-Bandplan.pdf
 #sa818 radio --frequency 430.025 --ctcss 94.8,94.8
 sa818 --port /dev/ttyAMA0 filters --emphasis no --highpass no --lowpass no
