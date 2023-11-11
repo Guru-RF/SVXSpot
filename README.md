@@ -23,6 +23,14 @@ sudo systemctl restart svxlink
 
 Then restart svxlink with systemctl restart svxlink
 
+If you have a VHF module instead of UHF, you must execute the following commands in addition to updating the module's configuration:
+
+```console
+sudo rm -f /usr/sbin/hotspot
+sudo ln -s /usr/sbin/hotspot-vhf /usr/sbin/hotspot
+sudo /usr/sbin/hotspot
+```
+
 # SVXLink and Radiomodule install scripts
 
 Prepare your sd-card with Raspberry PI OS ([Bookworm 32Bit Lite](https://www.raspberrypi.com/software/operating-systems/)) ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
