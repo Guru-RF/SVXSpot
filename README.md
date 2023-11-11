@@ -17,6 +17,7 @@ Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0
 ```console
 sudo perl -i -pe 's/--CALL--/ON0RFG/g' /etc/svxlink/svxlink.conf
 sudo perl -i -pe 's/--PWD--/PASSWORD/g' /etc/svxlink/svxlink.conf
+sudo /usr/sbin/hotspot
 sudo systemctl restart svxlink
 ```
 
