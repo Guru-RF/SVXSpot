@@ -11,6 +11,7 @@ Those boards can also be used for analog ham radio experiments on the 70cm and 2
 [Bookworm 32Bit Lite 2023-11-11](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-11.img.gz)
 
 Use PI-Imager to burn the image (Operating System -> Use custom) add user and WiFi credentials and enable SSH access (click on the gear) !!!
+Youtube demonstration of how to user PI-Imager [Youtube PI-Imager](https://www.youtube.com/watch?v=UeiBUUef2c0)
 
 Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password.
 
