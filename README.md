@@ -14,11 +14,16 @@ Use PI-Imager to burn the image (Operating System -> Use custom) add user and Wi
 
 [Youtube demonstration of how to use PI-Imager](https://www.youtube.com/watch?v=UeiBUUef2c0)
 
-Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password.
+You need SSH to do the last bit of configuration, for linux/mac ssh is installed by default open a terminal and you can type ssh username@ip
 
+For windows however you need an extra application, for instance Putty
 [Youtube how to install putty on Windows 11](https://www.youtube.com/watch?v=ljL4Wvv8XwI)
 
 Make sure you download for right archetecture, for most it will be x86 64 bit !!
+
+
+
+Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password.
 
 ```console
 sudo perl -i -pe 's/--CALL--/ON0RFG/g' /etc/svxlink/svxlink.conf
