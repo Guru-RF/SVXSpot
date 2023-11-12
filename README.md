@@ -23,9 +23,10 @@ Make sure you download for right archetecture, for most it will be x86 64 bit !!
 
 
 
-Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password.
+Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password, and 127.0.0.1 with your svxreflector's ip adress.
 
 ```console
+sudo perl -i -pe 's/--HOST--/127.0.0.1/g' /etc/svxlink/svxlink.conf
 sudo perl -i -pe 's/--CALL--/ON0RFG/g' /etc/svxlink/svxlink.conf
 sudo perl -i -pe 's/--PWD--/PASSWORD/g' /etc/svxlink/svxlink.conf
 sudo /usr/sbin/hotspot
