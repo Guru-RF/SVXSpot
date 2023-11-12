@@ -14,6 +14,8 @@ Use PI-Imager to burn the image (Operating System -> Use custom) add user and Wi
 
 [Youtube demonstration of how to use PI-Imager](https://www.youtube.com/watch?v=UeiBUUef2c0)
 
+(Seems that the pi freezes after resizing the FS ... for now at first boot wait 5 minutes, remove power and boot up again.)
+
 You need SSH to do the last bit of configuration, for linux/mac ssh is installed by default open a terminal and you can type ssh username@ip
 
 For windows however you need an extra application, for instance Putty
