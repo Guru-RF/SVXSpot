@@ -45,7 +45,7 @@ sudo ln -s /usr/sbin/hotspot-vhf /usr/sbin/hotspot
 sudo /usr/sbin/hotspot
 ```
 
-# SVXLink and Radiomodule install scripts
+# Manual SVXLink and Radiomodule install scripts
 
 Prepare your sd-card with Raspberry PI OS ([Bookworm 32Bit Lite](https://www.raspberrypi.com/software/operating-systems/)) ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
 
