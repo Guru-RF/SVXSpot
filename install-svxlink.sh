@@ -64,6 +64,13 @@ run "chmod a+x /usr/sbin/svxlink_checkalsa"
 say "Updating svxlink.service"
 run "cp svxlink.service /lib/systemd/system/svxlink.service"
 
+say "Install Gum"
+run "mkdir -p /etc/apt/keyrings"
+run "curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg"
+run "echo 'deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *' | sudo tee /etc/apt/sources.list.d/charm.list"
+run "apt -y update"
+run "apt -y install gum"
+
 say "Installing default configurations"
 run "cat gpio.conf > /etc/svxlink/gpio.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf"
