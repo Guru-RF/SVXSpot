@@ -29,6 +29,7 @@ PIDFile=${PIDFILE}
 ExecStartPre=-/bin/touch ${LOGFILE}
 ExecStartPre=-/bin/chown ${RUNASUSER} ${LOGFILE}
 ExecStartPre=-/usr/sbin/svxlink_checkalsa
+ExecStartPre=-/usr/sbin/hotspot
 ExecStart=/usr/bin/svxlink --logfile=${LOGFILE} --config=${CFGFILE} --pidfile=${PIDFILE} --runasuser=${RUNASUSER}
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
