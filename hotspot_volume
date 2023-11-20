@@ -3,4 +3,16 @@
 # audio to radio Module
 amixer set 'Headphone' 70%
 # audio from radio Module
-amixer set 'Capture' 15%
+amixer set 'Capture' 20%
+
+# Disable ALC en Deemphasis
+amixer cset iface=MIXER,name='DAC Deemphasis Switch' 0
+amixer cset iface=MIXER,name='ALC Function' 0
+amixer cset iface=MIXER,name='ALC Target' 0
+amixer cset iface=MIXER,name='ALC Mode' 1
+amixer cset iface=MIXER,name='ALC Attack' 0
+amixer cset iface=MIXER,name='ALC Decay' 0
+amixer cset iface=MIXER,name='ALC Hold Time' 0
+amixer cset iface=MIXER,name='ALC Max Gain' 0
+amixer cset iface=MIXER,name='ALC Min Gain' 0
+amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0
