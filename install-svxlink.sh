@@ -85,26 +85,9 @@ say "Installing systemd services"
 run "systemctl enable svxlink_gpio_setup"
 run "systemctl enable svxlink"
 run "systemctl start svxlink_gpio_setup.service"
-run "systemctl start svxlink.service"
 
-say "Write Initial EEPROM settings to the radio module"
-run "/usr/sbin/hotspot"
-
-say "Edit & rerun /usr/sbin/hotspot to change frequencies/ctcss etc .."
-say "You only need to run this once as the module has eeprom !"
-
-say ""
-
-say "Edit & rerun /usr/sbin/hotspot_volume to modify rx/tx volume"
-say "You can monitor RX clipping with this command:"
-
-say ""
-
-say "sudo systemctl stop svxlink && sudo arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null"
-
-say ""
-
-say "Svxlink config is in here: /etc/svxlink/svxlink.conf"
+say "Starting hotspot configation !"
+run "/usr/sbin/hotspot-config"
 
 say "By default you can send dtmf tones D1# to the hotspot to activate te parrot"
 
