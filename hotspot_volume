@@ -3,7 +3,7 @@
 # audio to radio Module
 amixer set 'Headphone' 70%
 # audio from radio Module
-amixer set 'Capture' 20%
+amixer set 'Capture' 18%
 
 # Disable ALC en Deemphasis
 amixer cset iface=MIXER,name='DAC Deemphasis Switch' 0

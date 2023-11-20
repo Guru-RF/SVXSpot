@@ -71,6 +71,10 @@ run "echo 'deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt
 run "apt -y update"
 run "apt -y install gum"
 
+say "Install hostspot-config"
+run "cp hotspot-config /usr/sbin/hotspot-config"
+run "chmod +x /usr/sbin/hotspot-config"
+
 say "Installing default configurations"
 run "cat gpio.conf > /etc/svxlink/gpio.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf"

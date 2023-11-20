@@ -33,8 +33,8 @@ SQL=$(gum choose "squelch" "ctcss")
 gum style --foreground 212 "${SQL}"
 
 if [ "${SQL}" = "ctcss" ]; then
-	gum style --foreground "#04B575" "Enter CTCSS tone(s) seperated by a comma:"
-	TONE=$(gum input --value "138.1")
+	gum style --foreground "#04B575" "Enter CTCSS tone:"
+	TONE=$(gum input --value "131.8")
 	gum style --foreground 212 "${TONE}"
 fi
 
@@ -43,10 +43,23 @@ gum confirm "Commit changes?"
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
 	cp /etc/svxlink/svxlink.conf.orig /etc/svxlink/svxlink.conf
-	perl -i -pe 's/--HOST--/${REFLECTOR}/g' /etc/svxlink/svxlink.conf
-	perl -i -pe 's/--CALL--/${CALL}/g' /etc/svxlink/svxlink.conf
-	perl -i -pe 's/--PWD--/${PWD}/g' /etc/svxlink/svxlink.conf
-	/usr/sbin/hotspot
+	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--PWD--/${PWD}/g" /etc/svxlink/svxlink.conf
+	rm /usr/sbin/hotspot
+	if [ "${BAND}" = "70cm" ]; then
+		grep -v frequency /usr/sbin/hotspot-uhf > /usr/sbin/hotspot
+	fi
+	if [ "${BAND}" = "2m" ]; then
+		grep -v frequency /usr/sbin/hotspot-vhf > /usr/sbin/hotspot
+	fi
+	if [ "${SQL}" = "ctcss" ]; then
+		echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --squelch 8" >> /usr/sbin/hotspot
+	else
+		echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --squelch 8" >> /usr/sbin/hotspot
+	fi
+	chmod +x /usr/sbin/hotspot
+        /usr/sbin/hotspot
 	systemctl restart svxlink
 else
 gum style --foreground "#04B575" "Abort!"
