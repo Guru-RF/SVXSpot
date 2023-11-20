@@ -74,6 +74,7 @@ run "apt -y install gum"
 say "Installing default configurations"
 run "cat gpio.conf > /etc/svxlink/gpio.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf"
+run "cat svxlink.conf > /etc/svxlink/svxlink.conf.orig"
 run "cat svxlink_gpio_up > /usr/sbin/svxlink_gpio_up"
 
 say "Installing systemd services"
