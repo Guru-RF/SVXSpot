@@ -4,46 +4,27 @@
 
 [RF.Guru Analog Hotspot 2M (VHF)](https://rf.guru/) (In development)
 
-Those boards can also be used for analog ham radio experiments on the 70cm and 2m ham radio bands.
+These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands.
 
 # SVXLink Bookworm Image #
 
-[Bookworm 32Bit Lite 2023-11-11](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-11.img.gz)
+[Bookworm 32Bit Lite 2023-11-21](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-21.img.gz)
 
-Use PI-Imager to burn the image (Operating System -> Use custom) add user and WiFi credentials and enable SSH access (click on the gear) !!!
+Utilize PI-Imager for image burning (Operating System -> Custom), input user and WiFi credentials, and activate SSH access (select the gear icon)!!!
 
 [Youtube demonstration of how to use PI-Imager](https://www.youtube.com/watch?v=UeiBUUef2c0)
 
-(Seems that the pi freezes after resizing the FS ... for now at first boot wait 5 minutes, remove power and boot up again.)
+It appears that the Raspberry Pi freezes after resizing the file system. Currently, after the initial boot, wait for 5 minutes, disconnect the power, and then restart. We suspect this issue is a bug and anticipate it will likely be resolved in a future release of pi-shrink.
 
-You need SSH to do the last bit of configuration, for linux/mac ssh is installed by default open a terminal and you can type ssh username@ip
+To complete the final configuration step, SSH is required. For Linux/Mac, SSH is installed by default. Open a terminal and type ssh username@ip. However, for Windows, you'll need an additional application, such as Putty.
 
-For windows however you need an extra application, for instance Putty
 [Youtube how to install putty on Windows 11](https://www.youtube.com/watch?v=ljL4Wvv8XwI)
 
-Make sure you download for right archetecture, for most it will be x86 64 bit !!
+Ensure that you download Putty for the correct architecture; for the majority, it will be x86 64-bit.
 
-[![asciicast](I3qp1Pb0LrUQcYR5af3o0xXP4.png)](https://asciinema.org/a/I3qp1Pb0LrUQcYR5af3o0xXP4)
+Once connected, you can execute "sudo hotspot-config" as illustrated in this video:
 
-Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password, and 127.0.0.1 with your svxreflector's ip adress.
-
-```console
-sudo perl -i -pe 's/--HOST--/127.0.0.1/g' /etc/svxlink/svxlink.conf
-sudo perl -i -pe 's/--CALL--/ON0RFG/g' /etc/svxlink/svxlink.conf
-sudo perl -i -pe 's/--PWD--/PASSWORD/g' /etc/svxlink/svxlink.conf
-sudo /usr/sbin/hotspot
-sudo systemctl restart svxlink
-```
-
-Then restart svxlink with systemctl restart svxlink
-
-If you have a VHF module instead of UHF, you must execute the following commands in addition to updating the module's configuration:
-
-```console
-sudo rm -f /usr/sbin/hotspot
-sudo ln -s /usr/sbin/hotspot-vhf /usr/sbin/hotspot
-sudo /usr/sbin/hotspot
-```
+https://github.com/Guru-RF/SVXSpot/assets/1251767/17f0ab74-1131-41cb-9010-6faa3e3f832c
 
 # Manual SVXLink and Radiomodule install scripts
 
