@@ -23,7 +23,9 @@ For windows however you need an extra application, for instance Putty
 
 Make sure you download for right archetecture, for most it will be x86 64 bit !!
 
-https://github.com/Guru-RF/SVXSpot/assets/1251767/a9f15fe2-7b61-4e3c-ac42-b7110c9ad03d
+https://github.com/Guru-RF/SVXSpot/assets/1251767/17f0ab74-1131-41cb-9010-6faa3e3f832c
+
+
 
 # Manual SVXLink and Radiomodule install scripts
 
