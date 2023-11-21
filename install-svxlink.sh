@@ -63,6 +63,8 @@ run "chmod a+x /usr/sbin/svxlink_checkalsa"
 
 say "Updating svxlink.service"
 run "cp svxlink.service /lib/systemd/system/svxlink.service"
+say "Updating remotetrx.service"
+run "cp remotetrx.service /lib/systemd/system/remotetrx.service"
 
 say "Install Gum"
 run "mkdir -p /etc/apt/keyrings"
