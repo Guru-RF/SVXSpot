@@ -66,8 +66,9 @@ run "cp svxlink.service /lib/systemd/system/svxlink.service"
 
 say "Install Gum"
 run "mkdir -p /etc/apt/keyrings"
+run "rm -f /etc/apt/keyrings/charm.gpg"
 run "curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg"
-run "echo 'deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *' | sudo tee /etc/apt/sources.list.d/charm.list"
+echo 'deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *' | sudo tee /etc/apt/sources.list.d/charm.list
 run "apt -y update"
 run "apt -y install gum"
 
