@@ -23,7 +23,7 @@ For windows however you need an extra application, for instance Putty
 
 Make sure you download for right archetecture, for most it will be x86 64 bit !!
 
-[![asciicast](https://asciinema.org/a/I3qp1Pb0LrUQcYR5af3o0xXP4.png)](https://asciinema.org/a/I3qp1Pb0LrUQcYR5af3o0xXP4)
+<script src="https://asciinema.org/a/I3qp1Pb0LrUQcYR5af3o0xXP4.js" id="asciicast-I3qp1Pb0LrUQcYR5af3o0xXP4" async></script>
 
 Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password, and 127.0.0.1 with your svxreflector's ip adress.
 
