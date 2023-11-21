@@ -1,4 +1,4 @@
-# This file is part of remotertx -- a voice services system for ham radio
+# This file is part of remotetrx -- a voice services system for ham radio
 #
 # Copyright (C) 2003-2019 Tobias Blomberg / SM0SVX
 #
@@ -18,7 +18,7 @@
 
 [Unit]
 Description=SvxLink remote transceiver repeater control software
-Documentation=man:remotertx(1)
+Documentation=man:remotetrx(1)
 Requires=svxlink_gpio_setup.service
 After=network.target remote-fs.target syslog.target time.target
 After=svxlink_gpio_setup.service wm8960-soundcard.service
@@ -30,7 +30,7 @@ ExecStartPre=-/bin/touch ${LOGFILE}
 ExecStartPre=-/bin/chown ${RUNASUSER} ${LOGFILE}
 ExecStartPre=-/usr/sbin/svxlink_checkalsa
 ExecStartPre=-/usr/sbin/hotspot
-ExecStart=/usr/bin/remotertx --logfile=${LOGFILE} --config=${CFGFILE} --pidfile=${PIDFILE} --runasuser=${RUNASUSER}
+ExecStart=/usr/bin/remotetrx --logfile=${LOGFILE} --config=${CFGFILE} --pidfile=${PIDFILE} --runasuser=${RUNASUSER}
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
 TimeoutStartSec=60
