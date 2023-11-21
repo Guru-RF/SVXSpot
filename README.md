@@ -9,6 +9,7 @@ Those boards can also be used for analog ham radio experiments on the 70cm and 2
 # SVXLink Bookworm Image #
 
 [Bookworm 32Bit Lite 2023-11-11](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-11.img.gz)
+New image with hotspot-config will be available later today !
 
 Use PI-Imager to burn the image (Operating System -> Use custom) add user and WiFi credentials and enable SSH access (click on the gear) !!!
 
