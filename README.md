@@ -23,31 +23,7 @@ For windows however you need an extra application, for instance Putty
 
 Make sure you download for right archetecture, for most it will be x86 64 bit !!
 
-
-
 https://github.com/Guru-RF/SVXSpot/assets/1251767/a9f15fe2-7b61-4e3c-ac42-b7110c9ad03d
-
-
-
-Upon accessing the hotspot through SSH, adjust your credentials by replacing ON0RFG with your CALL and PASSWORD with your password, and 127.0.0.1 with your svxreflector's ip adress.
-
-```console
-sudo perl -i -pe 's/--HOST--/127.0.0.1/g' /etc/svxlink/svxlink.conf
-sudo perl -i -pe 's/--CALL--/ON0RFG/g' /etc/svxlink/svxlink.conf
-sudo perl -i -pe 's/--PWD--/PASSWORD/g' /etc/svxlink/svxlink.conf
-sudo /usr/sbin/hotspot
-sudo systemctl restart svxlink
-```
-
-Then restart svxlink with systemctl restart svxlink
-
-If you have a VHF module instead of UHF, you must execute the following commands in addition to updating the module's configuration:
-
-```console
-sudo rm -f /usr/sbin/hotspot
-sudo ln -s /usr/sbin/hotspot-vhf /usr/sbin/hotspot
-sudo /usr/sbin/hotspot
-```
 
 # Manual SVXLink and Radiomodule install scripts
 
