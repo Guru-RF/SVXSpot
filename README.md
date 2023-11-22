@@ -8,11 +8,7 @@ These boards are also suitable for conducting analog ham radio experiments withi
 
 # SVXLink Bookworm Image #
 
-##### For PI Zero 2W, Raspberry PI 4
-[Bookworm 32Bit Lite 2023-11-21](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-21.img.gz)
-
-##### For PI Zero
-An image will be released soon !
+[Bookworm 32Bit Lite 2023-11-22](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-22.img.gz)
 
 Utilize PI-Imager for image burning (Operating System -> Custom), input user and WiFi credentials, and activate SSH access (select the gear icon)!!!
 
