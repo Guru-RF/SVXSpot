@@ -67,12 +67,9 @@ say "Updating remotetrx.service"
 run "cp remotetrx.service /lib/systemd/system/remotetrx.service"
 
 say "Install Gum"
-run "mkdir -p /etc/apt/keyrings"
-run "rm -f /etc/apt/keyrings/charm.gpg"
-run "curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg"
-echo 'deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *' | sudo tee /etc/apt/sources.list.d/charm.list
-run "apt -y update"
-run "apt -y install gum"
+run "apt install golang -y"
+run "cp /root/go/bin/gum /usr/sbin/gum"
+run "rm -fr /root/go"
 
 say "Install hostspot-config"
 run "cp hotspot-config /usr/sbin/hotspot-config"
