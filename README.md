@@ -10,7 +10,7 @@ These boards are also suitable for conducting analog ham radio experiments withi
 
 [Bookworm 32Bit Lite 2023-11-22](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-22.img.gz)
 
-Utilize PI-Imager to write the image to your MicroSD card!
+Utilize PI-Imager to write the image to your MicroSD card! Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !
 
 Use the latest release of PI-Imager [Github](https://github.com/raspberrypi/rpi-imager/releases)
 
