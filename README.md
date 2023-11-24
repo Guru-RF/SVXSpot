@@ -14,7 +14,7 @@ Utilize PI-Imager to write the image to your MicroSD card!
 
 Use the latest release of PI-Imager [Github](https://github.com/raspberrypi/rpi-imager/releases)
 
-[Youtube demonstration of how to use PI-Imager on MacOS X](https://www.youtube.com/watch?v=mOqekYMIBgU)
+[Youtube demonstration of how to use PI-Imager on Windows 11](https://www.youtube.com/watch?v=mOqekYMIBgU)
 
 [Youtube demonstration of how to use PI-Imager on MacOS X](https://www.youtube.com/watch?v=UeiBUUef2c0)
 
