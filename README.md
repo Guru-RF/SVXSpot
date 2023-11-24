@@ -10,7 +10,8 @@ These boards are also suitable for conducting analog ham radio experiments withi
 
 [Bookworm 32Bit Lite 2023-11-22](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-22.img.gz)
 
-Utilize PI-Imager for image burning (Operating System -> Custom), input user and WiFi credentials, and activate SSH access (select the gear icon)!!!
+Utilize PI-Imager to write the image to your MicroSD card!
+
 Use the latest release of PI-Imager [Github](https://github.com/raspberrypi/rpi-imager/releases)
 
 [Youtube demonstration of how to use PI-Imager on MacOS X](https://www.youtube.com/watch?v=mOqekYMIBgU)
