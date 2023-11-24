@@ -11,8 +11,11 @@ These boards are also suitable for conducting analog ham radio experiments withi
 [Bookworm 32Bit Lite 2023-11-22](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2023-11-22.img.gz)
 
 Utilize PI-Imager for image burning (Operating System -> Custom), input user and WiFi credentials, and activate SSH access (select the gear icon)!!!
+Use the latest release of PI-Imager [Github](https://github.com/raspberrypi/rpi-imager/releases)
 
-[Youtube demonstration of how to use PI-Imager](https://www.youtube.com/watch?v=UeiBUUef2c0)
+[Youtube demonstration of how to use PI-Imager on MacOS X](https://www.youtube.com/watch?v=mOqekYMIBgU)
+
+[Youtube demonstration of how to use PI-Imager on MacOS X](https://www.youtube.com/watch?v=UeiBUUef2c0)
 
 It appears that the Raspberry Pi freezes after resizing the file system. Currently, after the initial boot, wait for 5 minutes, disconnect the power, and then restart. We suspect this issue is a bug and anticipate it will likely be resolved in a future release of pi-shrink.
 
