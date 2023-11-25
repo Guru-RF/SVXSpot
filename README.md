@@ -4,6 +4,9 @@
 
 [RF.Guru Analog Hotspot 2M (VHF)](https://rf.guru/) (In development)
 
+GPIO 12 is the COS input from the Radio chip.
+GPIO 16 drives the PTT.
+
 These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands.
 
 # SVXLink Bookworm Image #
