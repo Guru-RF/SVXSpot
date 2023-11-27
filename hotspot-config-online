@@ -17,11 +17,11 @@ gum style --foreground "#04B575" "Callsign:"
 CALL=$(gum input --placeholder "ON0RFG")
 gum style --foreground 212 "${CALL}"
 
-gum style --foreground "#04B575" "Reflector <IP> or <FQDN>:"
+gum style --foreground "#04B575" "SVXLink Reflector <IP> or <FQDN>:"
 REFLECTOR=$(gum input --placeholder "my.reflector.com")
 gum style --foreground 212 "${REFLECTOR}"
 
-gum style --foreground "#04B575" "Reflector password:"
+gum style --foreground "#04B575" "SVXLink Reflector password:"
 PWD=$(gum input --placeholder "verysecretpassword")
 gum style --foreground 212 "${PWD}"
 
