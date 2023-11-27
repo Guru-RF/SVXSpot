@@ -58,7 +58,6 @@ if [ $RESULT -eq 0 ]; then
   say "Applying configuration"
   cp /tmp/svxlink.conf /etc/svxlink/svxlink.conf
   rm /tmp/svxlink.conf
-	cp /etc/svxlink/svxlink.conf.orig /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--PWD--/${PWD}/g" /etc/svxlink/svxlink.conf
