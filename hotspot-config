@@ -1,68 +1,17 @@
 #!/bin/bash
 
-gum style --border normal --margin "1" --padding "1 2" --border-foreground "#04B575" "$(gum style --foreground 3 'RF.')Guru $(gum style --foreground 3 '-') Hotspot Config"
+run() {
+  exec=$1
+  printf "\x1b[38;5;104m --> ${exec}\x1b[39m\n"
+  eval ${exec}
+}
 
-gum style --foreground "#04B575" "Callsign:"
-CALL=$(gum input --placeholder "ON0RFG")
-gum style --foreground 212 "${CALL}"
+say () {
+  say=$1
+  printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
+}
 
-gum style --foreground "#04B575" "Reflector <IP> or <FQDN>:"
-REFLECTOR=$(gum input --placeholder "my.reflector.com")
-gum style --foreground 212 "${REFLECTOR}"
-
-gum style --foreground "#04B575" "Reflector password:"
-PWD=$(gum input --placeholder "verysecretpassword")
-gum style --foreground 212 "${PWD}"
-
-gum style --foreground "#04B575" "Band:"
-BAND=$(gum choose "70cm" "2m")
-gum style --foreground 212 "${BAND}"
-
-gum style --foreground "#04B575" "Frequency:"
-if [ "${BAND}" = "70cm" ]; then
-	FREQ=$(gum input --value "439.100")
-fi
-
-if [ "${BAND}" = "2m" ]; then
-	FREQ=$(gum input --value "145.250")
-fi
-gum style --foreground 212 "${FREQ}"
-
-gum style --foreground "#04B575" "Signal detect:"
-SQL=$(gum choose "squelch" "ctcss")
-gum style --foreground 212 "${SQL}"
-
-if [ "${SQL}" = "ctcss" ]; then
-	gum style --foreground "#04B575" "Enter CTCSS tone:"
-	TONE=$(gum input --value "131.8")
-	gum style --foreground 212 "${TONE}"
-fi
-
-gum confirm "Commit changes?"
-
-RESULT=$?
-if [ $RESULT -eq 0 ]; then
-	cp /etc/svxlink/svxlink.conf.orig /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--PWD--/${PWD}/g" /etc/svxlink/svxlink.conf
-	rm /usr/sbin/hotspot
-	if [ "${BAND}" = "70cm" ]; then
-		grep -v frequency /usr/sbin/hotspot-uhf > /usr/sbin/hotspot
-	fi
-	if [ "${BAND}" = "2m" ]; then
-		grep -v frequency /usr/sbin/hotspot-vhf > /usr/sbin/hotspot
-	fi
-	if [ "${SQL}" = "ctcss" ]; then
-		echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --squelch 8" >> /usr/sbin/hotspot
-	else
-		echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --squelch 8" >> /usr/sbin/hotspot
-	fi
-	chmod +x /usr/sbin/hotspot
-        /usr/sbin/hotspot
-	systemctl restart svxlink
-else
-gum style --foreground "#04B575" "Abort!"
-fi
-
+say "Downloading latest hotspot-config"
+run "wget -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-config > /dev/null 2>&1"
+run "exec bash /tmp/hotspot-config-online"
 

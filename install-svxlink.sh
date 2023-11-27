@@ -86,6 +86,10 @@ run "systemctl enable svxlink_gpio_setup"
 run "systemctl enable svxlink"
 run "systemctl start svxlink_gpio_setup.service"
 
+say "Cleanup system"
+run "sudo apt clean"
+run "sudo apt autoclean"
+
 say "Starting hotspot configation !"
 run "/usr/sbin/hotspot-config"
 
