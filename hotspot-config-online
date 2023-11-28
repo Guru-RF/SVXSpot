@@ -93,11 +93,8 @@ RESULT=$?
 if [ $RESULT -eq 0 ]; then
   say "Downloading latest config template"
   run "wget -O /tmp/svxlink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink.conf > /dev/null 2>&1"
-  run "wget -O /tmp/ModuleEchoLink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/ModuleEchoLink.conf > /dev/null 2>&1"
   say "Applying configuration"
   cp /tmp/svxlink.conf /etc/svxlink/svxlink.conf
-  cp /tmp/svxlink.conf /etc/svxlink/ModuleEchoLink.conf
-  cp /tmp/svxlink.conf /etc/svxlink/svxlink.d/ModuleEchoLink.conf
 	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--SVXCALL--/${SVxCALL}/g" /etc/svxlink/svxlink.conf
@@ -117,7 +114,5 @@ gum style --foreground "#04B575" "Abort!"
 fi
 
 say "Send CTCSS ${TONE} to ${FREQ} with D1# to activate the parrot (to test audio levels)"
-say "Send CTCSS ${TONE} to ${FREQ} with D2# to activate EchoLink test room (to test audio levels)"
-say "Send CTCSS ${TONE} to ${FREQ} with D3# to activate EchoLink repeater ON0WV"
-say "Send CTCSS ${TONE} to ${FREQ} once activat the repeater talkgrou TG8, next PTT you are life on the repeater talkgroup"
+say "Send CTCSS ${TONE} to ${FREQ} once activate the repeater talkgroup TG8, next PTT you are life on the repeater network !"
 say "You here a small two tone when we are back in listening mode on TG0, when there is traffic on TG8 it will be automaticaly activated !"
