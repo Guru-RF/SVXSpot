@@ -11,10 +11,22 @@ say () {
   printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
 }
 
-OLDFREQ=$(grep freq /usr/sbin/hotspot-vhf | awk '{ print $6}')
+OLDFREQ=$(grep freq /usr/sbin/hotspot | awk '{ print $6}')
 OLDCALL=$(cat /etc/svxlink/svxlink.conf | grep CALL | head -n 1 | tr "=" "\n" | tail -n 1)
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="ON0RFG"
+fi
+OLDSVXREFL=$(cat /etc/svxlink/svxlink.conf | grep HOSTS | head -n 1 | tr "=" "\n" | tail -n 1)
+if [[ "${OLDSVXREFL}" == *"--"* ]]; then
+  OLDSVXREFL="hostname"
+fi
+OLDSVXCALL=$(cat /etc/svxlink/svxlink.conf | grep CALLSIGN | tr "=" "\n" | grep \")
+if [[ "${OLDSVXCALL}" == *"--"* ]]; then
+  OLDSVXCALL="ON0RFG"
+fi
+OLDSVXPWD=$(cat /etc/svxlink/svxlink.conf | grep AUTH_KEY | head -n 1 | tr "=" "\n")
+if [[ "${OLDSVXPWD}" == *"--"* ]]; then
+  OLDSVXPWD="secret"
 fi
 
 gum style --border normal --margin "1" --padding "1 2" --border-foreground "#04B575" "$(gum style --foreground 3 'RF.')Guru $(gum style --foreground 3 '-') Hotspot Config"
@@ -27,24 +39,25 @@ fi
 gum style --foreground 212 "${CALL}"
 
 gum style --foreground "#04B575" "SVXLink Reflector <IP> or <FQDN>:"
-REFLECTOR=$(gum input --placeholder "my.reflector.com")
+REFLECTOR=$(gum input --placeholder "${OLDSVXREFL}")
+if [[ "${REFLECTOR}" == "" ]]; then
+  REFLECTOR=${OLDSVXREFL}
+fi
 gum style --foreground 212 "${REFLECTOR}"
 
 gum style --foreground "#04B575" "SVXLINK Reflector Callsign:"
-SVXCALL=$(gum input --placeholder "${CALL}")
+SVXCALL=$(gum input --placeholder "${OLDSVXCALL}")
+if [[ "${SVXCALL}" == "" ]]; then
+  REFLECTOR=${OLDSVXCALL}
+fi
 gum style --foreground 212 "${SVXCALL}"
 
 gum style --foreground "#04B575" "SVXLink Reflector password:"
-SVXPWD=$(gum input --placeholder "verysecretpassword")
+SVXPWD=$(gum input --placeholder "${OLDSVXPWD}")
+if [[ "${SVXPWD}" == "" ]]; then
+  REFLECTOR=${OLDSVXPWD}
+fi
 gum style --foreground 212 "${SVXPWD}"
-
-gum style --foreground "#04B575" "EchoLink Reflector Callsign:"
-ELCALL=$(gum input --placeholder "${CALL}")
-gum style --foreground 212 "${ELCALL}"
-
-gum style --foreground "#04B575" "EchoLink Reflector password:"
-ELPWD=$(gum input --placeholder "verysecretpassword")
-gum style --foreground 212 "${ELPWD}"
 
 gum style --foreground "#04B575" "Band:"
 BAND=$(gum choose "70cm" "2m")
