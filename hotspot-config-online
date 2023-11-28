@@ -12,6 +12,7 @@ say () {
 }
 
 OLDFREQ=$(grep freq /usr/sbin/hotspot | awk '{ print $6}')
+OLDTONE=$(grep ctcss /usr/sbin/hotspot | awk '{ print $10}')
 OLDCALL=$(cat /etc/svxlink/svxlink.conf | grep CALL | head -n 1 | tr "=" "\n" | tail -n 1)
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="ON0RFG"
@@ -83,7 +84,7 @@ fi
 gum style --foreground 212 "${FREQ}"
 
 gum style --foreground "#04B575" "Enter CTCSS tone:"
-TONE=$(gum input --value "131.8")
+TONE=$(gum input --value "${OLDTONE}")
 gum style --foreground 212 "${TONE}"
 
 gum confirm "Commit changes?"
