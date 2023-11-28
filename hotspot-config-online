@@ -35,8 +35,8 @@ SVXCALL=$(gum input --placeholder "${CALL}")
 gum style --foreground 212 "${SVXCALL}"
 
 gum style --foreground "#04B575" "SVXLink Reflector password:"
-PWD=$(gum input --placeholder "verysecretpassword")
-gum style --foreground 212 "${PWD}"
+SVXPWD=$(gum input --placeholder "verysecretpassword")
+gum style --foreground 212 "${SVXPWD}"
 
 gum style --foreground "#04B575" "EchoLink Reflector Callsign:"
 ELCALL=$(gum input --placeholder "${CALL}")
@@ -60,6 +60,10 @@ if [ "${BAND}" = "2m" ]; then
 fi
 gum style --foreground 212 "${FREQ}"
 
+gum style --foreground "#04B575" "Enter CTCSS tone:"
+TONE=$(gum input --value "131.8")
+gum style --foreground 212 "${TONE}"
+
 gum confirm "Commit changes?"
 
 RESULT=$?
@@ -79,13 +83,9 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--ELPWD--/${ELPWD}/g" /etc/svxlink/svxlink.conf
   ModuleEchoLink.conf
 	rm /usr/sbin/hotspot
-	if [ "${BAND}" = "70cm" ]; then
-		grep -v frequency /usr/sbin/hotspot-uhf > /usr/sbin/hotspot
-	fi
-	if [ "${BAND}" = "2m" ]; then
-		grep -v frequency /usr/sbin/hotspot-vhf > /usr/sbin/hotspot
-	fi
-  echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --squelch 8" >> /usr/sbin/hotspot
+  echo "sa818 --port /dev/ttyAMA0 volume --level 1" > /usr/sbin/hotspot
+  echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE} --squelch 8" >> /usr/sbin/hotspot
+  echo "sa818 --port /dev/ttyAMA0 filters --emphasis yes --highpass no --lowpass no" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
   /usr/sbin/hotspot
 	systemctl restart svxlink
@@ -93,6 +93,8 @@ else
 gum style --foreground "#04B575" "Abort!"
 fi
 
-say "Send CTCSS 141.3 on ${FREQ} for parrot (DTMF D1#) and Echolink (Echolink test DTMD D2#)"
-say "Send CTCSS 88.5 for ${FREQ} connecting to TG8 (you need to send a signal to activate the talkgroup, if it is not yet activated)"
-say "Talkgroup 8 is monitored automaticaly !"
+say "Send CTCSS ${TONE} to ${FREQ} with D1# to activate the parrot (to test audio levels)"
+say "Send CTCSS ${TONE} to ${FREQ} with D2# to activate EchoLink test room (to test audio levels)"
+say "Send CTCSS ${TONE} to ${FREQ} with D3# to activate EchoLink repeater ON0WV"
+say "Send CTCSS ${TONE} to ${FREQ} once activat the repeater talkgrou TG8, next PTT you are life on the repeater talkgroup"
+say "You here a small two tone when we are back in listening mode on TG0, when there is traffic on TG8 it will be automaticaly activated !"
