@@ -93,9 +93,6 @@ run "sudo apt autoclean"
 say "Starting hotspot configation !"
 run "/usr/sbin/hotspot-config"
 
-say "By default you can send dtmf tones D1# to the hotspot to activate te parrot"
-
-
 
 
 
