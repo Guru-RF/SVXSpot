@@ -64,8 +64,12 @@ gum style --foreground "#04B575" "Band:"
 BAND=$(gum choose "70cm" "2m")
 gum style --foreground 212 "${BAND}"
 
+
 gum style --foreground "#04B575" "Frequency:"
 if [ "${BAND}" = "70cm" ]; then
+  if [[ "${OLDFREQ}" == "" ]]; then
+    OLDFREQ="439.100"
+  fi
   if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
   else
@@ -74,6 +78,9 @@ if [ "${BAND}" = "70cm" ]; then
 fi
 
 if [ "${BAND}" = "2m" ]; then
+  if [[ "${OLDFREQ}" == "" ]]; then
+    OLDFREQ="145.250"
+  fi
   if (( $(echo "${OLDFREQ} < 400" |bc -l) )); then
     FREQ=$(gum input --value "${OLDFREQ}")
   else
@@ -113,7 +120,7 @@ if [ $RESULT -eq 0 ]; then
 	systemctl restart svxlink
   say "Send CTCSS ${TONE} to ${FREQ} with D1# to activate the parrot (to test audio levels)"
   say "Send CTCSS ${TONE} to ${FREQ} once activate the repeater talkgroup TG8, next PTT you are life on the repeater network !"
-  say "You here a small two tone when we are back in listening mode on TG0, when there is traffic on TG8 it will be automaticaly activated !"
+  say "You here a small two-tone when we are back in listening mode on TG0, when there is traffic on TG8 it will be automaticaly activated !"
 else
 gum style --foreground "#04B575" "Abort!"
 fi
