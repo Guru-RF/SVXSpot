@@ -24,7 +24,7 @@ OLDSVXCALL=$(cat /etc/svxlink/svxlink.conf | grep CALLSIGN | tr "=" "\n" | grep 
 if [[ "${OLDSVXCALL}" == *"--"* ]]; then
   OLDSVXCALL="ON0RFG"
 fi
-OLDSVXPWD=$(cat /etc/svxlink/svxlink.conf | grep AUTH_KEY | head -n 1 | tr "=" "\n" | tr -cd '[:alnum:]._-')
+OLDSVXPWD=$(cat /etc/svxlink/svxlink.conf | grep AUTH_KEY | head -n 1 | tr "=" "\n" | tail -n 1 | tr -cd '[:alnum:]._-')
 if [[ "${OLDSVXPWD}" == *"--"* ]]; then
   OLDSVXPWD="secret"
 fi
