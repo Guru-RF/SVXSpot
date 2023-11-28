@@ -21,9 +21,21 @@ gum style --foreground "#04B575" "SVXLink Reflector <IP> or <FQDN>:"
 REFLECTOR=$(gum input --placeholder "my.reflector.com")
 gum style --foreground 212 "${REFLECTOR}"
 
+gum style --foreground "#04B575" "SVXLINK Reflector Callsign:"
+SVXCALL=$(gum input --placeholder "${CALL}")
+gum style --foreground 212 "${SVXCALL}"
+
 gum style --foreground "#04B575" "SVXLink Reflector password:"
 PWD=$(gum input --placeholder "verysecretpassword")
 gum style --foreground 212 "${PWD}"
+
+gum style --foreground "#04B575" "EchoLink Reflector Callsign:"
+ELCALL=$(gum input --placeholder "${CALL}")
+gum style --foreground 212 "${ELCALL}"
+
+gum style --foreground "#04B575" "EchoLink Reflector password:"
+ELPWD=$(gum input --placeholder "verysecretpassword")
+gum style --foreground 212 "${ELPWD}"
 
 gum style --foreground "#04B575" "Band:"
 BAND=$(gum choose "70cm" "2m")
@@ -39,28 +51,24 @@ if [ "${BAND}" = "2m" ]; then
 fi
 gum style --foreground 212 "${FREQ}"
 
-gum style --foreground "#04B575" "Signal detect:"
-SQL=$(gum choose "squelch" "ctcss")
-gum style --foreground 212 "${SQL}"
-
-if [ "${SQL}" = "ctcss" ]; then
-	gum style --foreground "#04B575" "Enter CTCSS tone:"
-	TONE=$(gum input --value "131.8")
-	gum style --foreground 212 "${TONE}"
-fi
-
 gum confirm "Commit changes?"
 
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
   say "Downloading latest config template"
   run "wget -O /tmp/svxlink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink.conf > /dev/null 2>&1"
+  run "wget -O /tmp/ModuleEchoLink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/ModuleEchoLink.conf > /dev/null 2>&1"
   say "Applying configuration"
   cp /tmp/svxlink.conf /etc/svxlink/svxlink.conf
-  rm /tmp/svxlink.conf
+  cp /tmp/svxlink.conf /etc/svxlink/ModuleEchoLink.conf
+  cp /tmp/svxlink.conf /etc/svxlink/svxlink.d/ModuleEchoLink.conf
 	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--SVXCALL--/${SVxCALL}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--PWD--/${PWD}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--ELCALL--/${ELCALL}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--ELPWD--/${ELPWD}/g" /etc/svxlink/svxlink.conf
+  ModuleEchoLink.conf
 	rm /usr/sbin/hotspot
 	if [ "${BAND}" = "70cm" ]; then
 		grep -v frequency /usr/sbin/hotspot-uhf > /usr/sbin/hotspot
@@ -68,13 +76,9 @@ if [ $RESULT -eq 0 ]; then
 	if [ "${BAND}" = "2m" ]; then
 		grep -v frequency /usr/sbin/hotspot-vhf > /usr/sbin/hotspot
 	fi
-	if [ "${SQL}" = "ctcss" ]; then
-		echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --squelch 8" >> /usr/sbin/hotspot
-	else
-		echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --squelch 8" >> /usr/sbin/hotspot
-	fi
+  echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --squelch 8" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
-        /usr/sbin/hotspot
+  /usr/sbin/hotspot
 	systemctl restart svxlink
 else
 gum style --foreground "#04B575" "Abort!"
