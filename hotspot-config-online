@@ -21,6 +21,9 @@ gum style --border normal --margin "1" --padding "1 2" --border-foreground "#04B
 
 gum style --foreground "#04B575" "Callsign:"
 CALL=$(gum input --placeholder "${OLDCALL}")
+if [[ "${CALL}" == "" ]]; then
+  CALL=${OLDCALL}
+fi
 gum style --foreground 212 "${CALL}"
 
 gum style --foreground "#04B575" "SVXLink Reflector <IP> or <FQDN>:"
