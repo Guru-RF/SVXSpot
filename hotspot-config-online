@@ -84,4 +84,6 @@ else
 gum style --foreground "#04B575" "Abort!"
 fi
 
-
+say "Send CTCSS 141.3 on ${FREQ} for parrot (DTMF D1#) and Echolink (Echolink test DTMD D2#)"
+say "Send CTCSS 88.5 for ${FREQ} connecting to TG8 (you need to send a signal to activate the talkgroup, if it is not yet activated)"
+say "Talkgroup 8 is monitored automaticaly !"
