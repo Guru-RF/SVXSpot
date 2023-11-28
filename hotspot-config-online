@@ -11,10 +11,16 @@ say () {
   printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
 }
 
+OLDFREQ=$(grep freq /usr/sbin/hotspot-vhf | awk '{ print $6}')
+OLDCALL=$(cat /etc/svxlink/svxlink.conf | grep CALL | head -n 1 | tr "=" "\n" | tail -n 1)
+if [[ "${OLDCALL}" == *"--"* ]]; then
+  OLDCALL="ON0RFG"
+fi
+
 gum style --border normal --margin "1" --padding "1 2" --border-foreground "#04B575" "$(gum style --foreground 3 'RF.')Guru $(gum style --foreground 3 '-') Hotspot Config"
 
 gum style --foreground "#04B575" "Callsign:"
-CALL=$(gum input --placeholder "ON0RFG")
+CALL=$(gum input --placeholder "${OLDCALL}")
 gum style --foreground 212 "${CALL}"
 
 gum style --foreground "#04B575" "SVXLink Reflector <IP> or <FQDN>:"
