@@ -97,11 +97,8 @@ if [ $RESULT -eq 0 ]; then
   cp /tmp/svxlink.conf /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--SVXCALL--/${SVxCALL}/g" /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--PWD--/${PWD}/g" /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--ELCALL--/${ELCALL}/g" /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--ELPWD--/${ELPWD}/g" /etc/svxlink/svxlink.conf
-  ModuleEchoLink.conf
+	perl -i -pe "s/--SVXCALL--/${SVXCALL}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--SVXPWD--/${SVXPWD}/g" /etc/svxlink/svxlink.conf
 	rm /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 volume --level 1" > /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE} --squelch 8" >> /usr/sbin/hotspot
