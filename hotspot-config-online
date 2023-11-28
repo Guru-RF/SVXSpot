@@ -20,7 +20,7 @@ OLDSVXREFL=$(cat /etc/svxlink/svxlink.conf | grep HOSTS | head -n 1 | tr "=" "\n
 if [[ "${OLDSVXREFL}" == *"--"* ]]; then
   OLDSVXREFL="hostname"
 fi
-OLDSVXCALL=$(cat /etc/svxlink/svxlink.conf | grep CALLSIGN | tr "=" "\n" | grep \")
+OLDSVXCALL=$(cat /etc/svxlink/svxlink.conf | grep CALLSIGN | tr "=" "\n" | grep \" | tr -cd '[:alnum:]._-')
 if [[ "${OLDSVXCALL}" == *"--"* ]]; then
   OLDSVXCALL="ON0RFG"
 fi
