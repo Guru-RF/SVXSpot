@@ -11,8 +11,10 @@ say () {
   printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
 }
 
+EPOCH=$(date +%s)
+
 say "Downloading latest hotspot-config"
 run "rm -f /tmp/hotspot-config-online"
-run "wget --no-cache -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-config-online > /dev/null 2>&1"
+run "wget --no-cache -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-config-online?${EPOCH} > /dev/null 2>&1"
 run "exec bash /tmp/hotspot-config-online"
 

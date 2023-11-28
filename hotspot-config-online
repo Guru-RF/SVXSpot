@@ -48,14 +48,14 @@ gum style --foreground 212 "${REFLECTOR}"
 gum style --foreground "#04B575" "SVXLINK Reflector Callsign:"
 SVXCALL=$(gum input --placeholder "${OLDSVXCALL}")
 if [[ "${SVXCALL}" == "" ]]; then
-  REFLECTOR=${OLDSVXCALL}
+  SVXCALL=${OLDSVXCALL}
 fi
 gum style --foreground 212 "${SVXCALL}"
 
 gum style --foreground "#04B575" "SVXLink Reflector password:"
 SVXPWD=$(gum input --placeholder "${OLDSVXPWD}")
 if [[ "${SVXPWD}" == "" ]]; then
-  REFLECTOR=${OLDSVXPWD}
+  SVXPWD=${OLDSVXPWD}
 fi
 gum style --foreground 212 "${SVXPWD}"
 
@@ -65,12 +65,21 @@ gum style --foreground 212 "${BAND}"
 
 gum style --foreground "#04B575" "Frequency:"
 if [ "${BAND}" = "70cm" ]; then
-	FREQ=$(gum input --value "439.100")
+  if (( $(echo "${OLDFREQ} > 400" |bc -l) )); then
+    FREQ=$(gum input --value "${OLDFREQ}")
+  else
+    FREQ=$(gum input --value "439.100")
+  fi
 fi
 
 if [ "${BAND}" = "2m" ]; then
-	FREQ=$(gum input --value "145.250")
+  if (( $(echo "${OLDFREQ} < 400" |bc -l) )); then
+    FREQ=$(gum input --value "${OLDFREQ}")
+  else
+    FREQ=$(gum input --value "145.250")
+  fi
 fi
+
 gum style --foreground 212 "${FREQ}"
 
 gum style --foreground "#04B575" "Enter CTCSS tone:"
