@@ -89,8 +89,13 @@ gum style --foreground 212 "${TONE}"
 
 gum confirm "Commit changes?"
 
+EPOCH=$(date +%s)
+
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
+  say "Backup old config"
+  run "cp /etc/svxlink/svxlink.conf /tmp/svxlink.conf.${EPOCH}"
+  run "rm -f /tmp/svxlink.conf"
   say "Downloading latest config template"
   run "wget -O /tmp/svxlink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink.conf > /dev/null 2>&1"
   say "Applying configuration"
