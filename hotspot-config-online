@@ -91,6 +91,9 @@ fi
 gum style --foreground 212 "${FREQ}"
 
 gum style --foreground "#04B575" "Enter CTCSS tone:"
+if [[ "${OLDTONE}" == "" ]]; then
+  OLDTONE="88.5"
+fi
 TONE=$(gum input --value "${OLDTONE}")
 gum style --foreground 212 "${TONE}"
 
