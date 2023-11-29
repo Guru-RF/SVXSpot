@@ -1,8 +1,10 @@
-# SVXSpot an SVXLink Analog Hotspot 70CM (UHF) for the Raspberry Pi Zero ([RF.Guru SVXSpot](https://rf.guru/2023-k-041))
+# SVXSpot an SVXLink Analog Hotspot for the Raspberry Pi Zero 
 
-[RF.Guru Analog Hotspot 70CM (UHF)](https://rf.guru/2023-k-041) (Currently for sale)
+[RF.Guru Analog Hotspot 70CM (UHF)](https://rf.guru/2023-k-041)
 
-[RF.Guru Analog Hotspot 2M (VHF)](https://rf.guru/) (In development)
+[RF.Guru Analog Hotspot 2M (VHF)](https://rf.guru/2023-k-041-v)
+
+[RF.Guru Analog Transceiver 2M/70CM (VHF/UHF)](https://rf.guru/2023-k-141)
 
 GPIO 12 is the COS input from the Radio chip.
 GPIO 16 drives the PTT.
