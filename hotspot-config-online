@@ -46,7 +46,7 @@ if [[ "${REFLECTOR}" == "" ]]; then
 fi
 gum style --foreground 212 "${REFLECTOR}"
 
-gum style --foreground "#04B575" "SVXLINK Reflector Callsign:"
+gum style --foreground "#04B575" "SVXLINK Reflector User Callsign:"
 SVXCALL=$(gum input --placeholder "${OLDSVXCALL}")
 if [[ "${SVXCALL}" == "" ]]; then
   SVXCALL=${OLDSVXCALL}
