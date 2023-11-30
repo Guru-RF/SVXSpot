@@ -106,6 +106,8 @@ if [ $RESULT -eq 0 ]; then
   say "Backup old config"
   run "cp /etc/svxlink/svxlink.conf /tmp/svxlink.conf.${EPOCH}"
   run "rm -f /tmp/svxlink.conf"
+  say "Downloading latest sa818 firmware module"
+  run "wget -O /usr/local/bin/sa818 https://raw.githubusercontent.com/Guru-RF/SA818/main/sa818.py"
   say "Downloading latest config template"
   run "wget -O /tmp/svxlink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink.conf > /dev/null 2>&1"
   say "Applying configuration"
@@ -116,7 +118,7 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--SVXPWD--/${SVXPWD}/g" /etc/svxlink/svxlink.conf
 	rm /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 volume --level 1" > /usr/sbin/hotspot
-  echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE} --squelch 8" >> /usr/sbin/hotspot
+  echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss 0,${TONE} --squelch 8 --close-tail no" >> /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 filters --emphasis yes --highpass no --lowpass no" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
   /usr/sbin/hotspot
