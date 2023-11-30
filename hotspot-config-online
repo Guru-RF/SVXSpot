@@ -97,9 +97,9 @@ fi
 TONE=$(gum input --value "${OLDTONE}")
 gum style --foreground 212 "${TONE}"
 
-gum confirm "Commit changes?"
-
 EPOCH=$(date +%s)
+
+gum confirm "Commit changes?"
 
 RESULT=$?
 if [ $RESULT -eq 0 ]; then
