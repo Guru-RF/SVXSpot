@@ -12,7 +12,7 @@ say () {
 }
 
 OLDFREQ=$(grep freq /usr/sbin/hotspot | awk '{ print $6}')
-OLDTONE=$(grep ctcss /usr/sbin/hotspot | awk '{ print $8}')
+OLDTONE=$(grep ctcss /usr/sbin/hotspot | awk '{ print $8}' | tr "," "\n" | tail -n 1)
 OLDCALL=$(cat /etc/svxlink/svxlink.conf | grep CALL | head -n 1 | tr "=" "\n" | tail -n 1)
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="ON0RFG"
@@ -107,7 +107,7 @@ if [ $RESULT -eq 0 ]; then
   run "cp /etc/svxlink/svxlink.conf /tmp/svxlink.conf.${EPOCH}"
   run "rm -f /tmp/svxlink.conf"
   say "Downloading latest sa818 firmware module"
-  run "wget -O /usr/local/bin/sa818 https://raw.githubusercontent.com/Guru-RF/SA818/main/sa818.py"
+  run "wget -O /usr/local/bin/sa818 https://raw.githubusercontent.com/Guru-RF/SA818/main/sa818.py > /dev/null 2>&1"
   say "Downloading latest config template"
   run "wget -O /tmp/svxlink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink.conf > /dev/null 2>&1"
   say "Applying configuration"
