@@ -75,5 +75,10 @@ arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null
 Sending D1# dtmf on the configured frequency starts the parrot.<br>
 (On Anytone DTMF ABCD -> P1 = A  P2 =B  up button =C down button =D)
 
+### Hostpot Full Audio / RF module Test ###
+```console
+curl -L -o - https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/test-hotspot.sh | sudo bash
+```
+
 ### SVXLink Hotspot in action ###
 https://github.com/Guru-RF/SVXSpot/assets/1251767/50dd4366-8439-4067-83b5-5866d0adca77
