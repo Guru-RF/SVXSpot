@@ -1,7 +1,7 @@
 #!/bin/bash
 
 systemctl stop svxlink
-curl -o /tmp/ImperialMarch60.wav https://github.com/Guru-RF/SVXSpot/raw/master/ImperialMarch60.wav
+curl -L -o /tmp/ImperialMarch60.wav https://github.com/Guru-RF/SVXSpot/raw/master/ImperialMarch60.wav
 /usr/sbin/hotspot_volume > /dev/null 2>&1
 /usr/sbin/hotspot
 raspi-gpio set 16 dl
