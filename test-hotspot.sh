@@ -6,7 +6,7 @@ curl -L -o /tmp/ImperialMarch60.wav https://github.com/Guru-RF/SVXSpot/raw/maste
 /usr/sbin/hotspot
 raspi-gpio set 16 dl
 aplay /tmp/ImperialMarch60.wav
-raspi-gpio set 16 dl
+raspi-gpio set 16 dh
 echo "Send audio with your portable ... recording for 20seconds"
 arecord -V stereo -r 44100 -f S16_LE -c 2 /tmp/test.wav -d 20
 echo "Playing recording"
