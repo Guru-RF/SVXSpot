@@ -27,7 +27,7 @@ say "Clone dashboard from repo"
 run "cd /var/www; git clone https://github.com/Guru-RF/SVXLink-Dash-V2-FLANDERS.git html"
 
 say "Start Apache"
-run "systemct start apache2"
+run "systemctl start apache2"
 
 HOSTNAME=$(hostname)
 say "You should be able to access the dashboard via: http://${HOSTNAME}.local"
