@@ -24,7 +24,7 @@ say "Remove default html dir"
 run "rm -fr /var/www/html"
 
 say "Clone dashboard from repo"
-run "cd /var/www; git clone https://github.com/Guru-RF/SVXLink-Dash-V2-FLANDERS.git html"
+run "cd /var/www; git clone https://github.com/Guru-RF/SVXLink-Dash-V2-FLANDERS.git html; chown -R svxlink:svxlink html"
 
 say "Start Apache"
 run "systemctl start apache2"
