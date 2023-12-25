@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/usr/bin/ts "%a %b %d %H:%M:%S %Y:" >> /var/log/svxlink
