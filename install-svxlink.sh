@@ -66,6 +66,10 @@ run "cp svxlink.service /lib/systemd/system/svxlink.service"
 say "Updating remotetrx.service"
 run "cp remotetrx.service /lib/systemd/system/remotetrx.service"
 
+say "Install hostspot_logger"
+run "cp hotspot-config /usr/sbin/hotspot_logger"
+run "chmod +x /usr/sbin/hotspot_logger"
+
 say "Install Gum"
 run "apt install golang -y"
 run "cp /root/go/bin/gum /usr/sbin/gum"
