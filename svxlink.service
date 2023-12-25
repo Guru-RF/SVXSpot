@@ -30,8 +30,7 @@ ExecStartPre=-/bin/touch ${LOGFILE}
 ExecStartPre=-/bin/chown ${RUNASUSER} ${LOGFILE}
 ExecStartPre=-/usr/sbin/svxlink_checkalsa
 ExecStartPre=-/usr/sbin/hotspot
-ExecStart=/bin/sh -c '/usr/bin/nc -lk 10000 | /usr/bin/svxlink --config=${CFGFILE} --pidfile=${PIDFILE} --runasuser=${RUNASUSER} >> ${LOGFILE}'
-ExecReload=/bin/kill -s HUP $MAINPID
+ExecStart=/bin/sh -c '/usr/bin/nc -lk 10000 | /usr/bin/svxlink --config=${CFGFILE} --pidfile=${PIDFILE} --runasuser=${RUNASUSER} | /usr/sbin/hotspot_logger ${LOGFILE}'ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
 TimeoutStartSec=60
 TimeoutStopSec=10
