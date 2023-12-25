@@ -70,6 +70,9 @@ say "Install hostspot_logger"
 run "cp hotspot-config /usr/sbin/hotspot_logger"
 run "chmod +x /usr/sbin/hotspot_logger"
 
+say "Sysctl UDP tuning parameters"
+run "cp 97-rfguru.conf /etc/sysctl.d/97-rfguru.conf"
+
 say "Install Gum"
 run "apt install golang -y"
 run "cp /root/go/bin/gum /usr/sbin/gum"
