@@ -75,6 +75,7 @@ run "cp 97-rfguru.conf /etc/sysctl.d/97-rfguru.conf"
 
 say "Install Gum"
 run "apt install golang -y"
+run "go install github.com/charmbracelet/gum@latest"
 run "cp /root/go/bin/gum /usr/sbin/gum"
 run "rm -fr /root/go"
 
