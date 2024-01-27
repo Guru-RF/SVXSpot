@@ -67,7 +67,7 @@ say "Updating remotetrx.service"
 run "cp remotetrx.service /lib/systemd/system/remotetrx.service"
 
 say "Install hostspot_logger"
-run "cp hotspot-config /usr/sbin/hotspot_logger"
+run "cp hotspot_logger /usr/sbin/hotspot_logger"
 run "chmod +x /usr/sbin/hotspot_logger"
 
 say "Sysctl UDP tuning parameters"
