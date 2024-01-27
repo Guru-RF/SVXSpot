@@ -70,6 +70,10 @@ say "Install hostspot_logger"
 run "cp hotspot_logger /usr/sbin/hotspot_logger"
 run "chmod +x /usr/sbin/hotspot_logger"
 
+say "Install hotspot_dtmf"
+run "cp hhotspot_dtmf /usr/sbin/hotspot_dtmf"
+run "chmod +x /usr/sbin/hotspot_dtmf"
+
 say "Sysctl UDP tuning parameters"
 run "cp 97-rfguru.conf /etc/sysctl.d/97-rfguru.conf"
 
