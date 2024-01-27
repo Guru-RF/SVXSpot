@@ -29,6 +29,12 @@ run "cd /var/www; git clone https://github.com/Guru-RF/SVXLink-Dash-V2-FLANDERS.
 say "Start Apache"
 run "systemctl start apache2"
 
+say "Add Apache to sudoers"
+run "usermod --shell /bin/bash www-data"
+run "usermod -aG sudo www-data"
+run "echo 'www-data ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/020_www-data-nopasswd"
+
+
 HOSTNAME=$(hostname)
 say "You should be able to access the dashboard via: http://${HOSTNAME}.local"
 
