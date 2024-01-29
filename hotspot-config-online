@@ -125,6 +125,7 @@ if [ $RESULT -eq 0 ]; then
   cp /tmp/node_info.json /etc/svxlink/node_info.json
 	perl -i -pe "s/--HOST--/${REFLECTOR}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--SVXCALL--/${SVXCALL}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--SVXPWD--/${SVXPWD}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--LOCATION--/${LOCATION}/g" /etc/svxlink/node_info.json
