@@ -4,6 +4,11 @@
   "qth": [
     {
       "name": "RF.Guru Hotspot",
+        "pos": {
+                "lat": "50.9474907",
+                "long": "4.2401758",
+                "loc": "JO20cw"
+            },
       "rx": {
         "A": {
           "name": "Rx1",
