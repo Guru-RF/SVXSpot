@@ -15,6 +15,18 @@ OLDFREQ=$(grep freq /usr/sbin/hotspot | awk '{ print $6}')
 OLDTONE=$(grep ctcss /usr/sbin/hotspot | awk '{ print $8}' | tr "," "\n" | tail -n 1)
 OLDCALL=$(cat /etc/svxlink/svxlink.conf | grep CALL | head -n 1 | tr "=" "\n" | tail -n 1)
 OLDLOCATION=$(grep -i location /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tr -cd '[:alnum:]._-')
+OLDLAT=$(grep -i lat /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tr -cd '[:alnum:]._-')
+OLDLON=$(grep -i lon /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tr -cd '[:alnum:]._-')
+OLDLOC=$(grep -i loc /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tail -n 1 |  tr -cd '[:alnum:]._-')
+if [[ "${OLDLAT}" == *"--"* ]]; then
+  OLDLAT="50.4707972"
+fi
+if [[ "${OLDLON}" == *"--"* ]]; then
+  OLDLON="3.8624516"
+fi
+if [[ "${OLDLOC}" == *"--"* ]]; then
+  OLDLOC="JO10VK"
+fi
 if [[ "${OLDCALL}" == *"--"* ]]; then
   OLDCALL="ON0RFG"
 fi
@@ -100,10 +112,32 @@ gum style --foreground 212 "${TONE}"
 
 gum style --foreground "#04B575" "Enter Location:"
 if [[ "${OLDLOCATION}" == "" ]]; then
-  OLDLOCATION="88.5"
+  OLDLOCATION="Saint Ghislain"
 fi
 LOCATION=$(gum input --value "${OLDLOCATION}")
 gum style --foreground 212 "${LOCATION}"
+
+gum style --foreground "#04B575" "Enter Latitude:"
+if [[ "${OLDLAT}" == "" ]]; then
+  OLDLAT="50.4707972"
+fi
+LAT=$(gum input --value "${OLDLAT}")
+gum style --foreground 212 "${LAT}"
+
+gum style --foreground "#04B575" "Enter Longitude:"
+if [[ "${OLDLON}" == "" ]]; then
+  OLDLON="3.8624516"
+fi
+LON=$(gum input --value "${OLDLON}")
+gum style --foreground 212 "${LON}"
+
+gum style --foreground "#04B575" "Enter Gridsquare:"
+if [[ "${OLDLOC}" == "" ]]; then
+  OLDLOC="JO10VK"
+fi
+LOC=$(gum input --value "${OLDLOC}")
+gum style --foreground 212 "${LOC}"
+  
 
 EPOCH=$(date +%s)
 
@@ -129,6 +163,9 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--SVXCALL--/${SVXCALL}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--SVXPWD--/${SVXPWD}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--LOCATION--/${LOCATION}/g" /etc/svxlink/node_info.json
+	perl -i -pe "s/--LAT--/${LAT}/g" /etc/svxlink/node_info.json
+	perl -i -pe "s/--LON--/${LON}/g" /etc/svxlink/node_info.json
+	perl -i -pe "s/--LOC--/${LOC}/g" /etc/svxlink/node_info.json
 	rm /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 volume --level 1" > /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss 0,${TONE} --squelch 8 --close-tail no" >> /usr/sbin/hotspot
@@ -143,4 +180,3 @@ if [ $RESULT -eq 0 ]; then
 else
 gum style --foreground "#04B575" "Abort!"
 fi
-
