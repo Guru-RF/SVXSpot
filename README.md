@@ -1,15 +1,17 @@
 # SVXSpot an SVXLink Analog Hotspot for the Raspberry Pi Zero 
 
-[RF.Guru Analog Hotspot 70CM (UHF)](https://rf.guru/2023-k-041)
+[RF.Guru Analog Hotspot 70CM (UHF)](https://rf.guru/2023-k-041-u)
 
 [RF.Guru Analog Hotspot 2M (VHF)](https://rf.guru/2023-k-041-v)
 
-[RF.Guru Analog Transceiver 2M/70CM (VHF/UHF)](https://rf.guru/2023-k-141)
+[RF.Guru Analog Transceiver 70CM (UHF)](https://rf.guru/2023-k-141-u)
+
+[RF.Guru Analog Transceiver 2M (VHF)](https://rf.guru/2023-k-141-v)
 
 GPIO 12 is the COS input from the Radio chip.
 GPIO 16 drives the PTT.
 
-These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands.
+These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands. (Like APRS iGate/Digipeater, packet etc...)
 
 # SVXLink Bookworm Image #
 
