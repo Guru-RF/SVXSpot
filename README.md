@@ -37,6 +37,10 @@ Once connected, you can execute "sudo hotspot-config" as illustrated in this vid
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/17f0ab74-1131-41cb-9010-6faa3e3f832c
 
+# Hotspot with enclosure
+
+https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6e67908
+
 # Manual SVXLink and Radiomodule install scripts
 
 Prepare your sd-card with Raspberry PI OS ([Bookworm 32Bit Lite](https://www.raspberrypi.com/software/operating-systems/)) ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
