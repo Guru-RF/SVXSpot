@@ -35,7 +35,7 @@ Ensure that you download Putty for the correct architecture; for the majority, i
 
 Once connected, you can execute "sudo hotspot-config" as illustrated in this video:
 
-https://github.com/Guru-RF/SVXSpot/assets/1251767/17f0ab74-1131-41cb-9010-6faa3e3f832c
+https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
 # Hotspot with enclosure
 
