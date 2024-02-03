@@ -15,7 +15,7 @@ These boards are also suitable for conducting analog ham radio experiments withi
 
 # SVXLink Bookworm Image #
 
-[Bookworm 32Bit Lite 2024-01-29 Image](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-01-29.img.gz)
+[Bookworm 32Bit Lite 2024-01-29 Image](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-01-29.img.gz) (tested on Raspberry Pi Zero 2W and Raspberry Pi 4)
 
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
