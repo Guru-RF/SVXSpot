@@ -37,6 +37,11 @@ Once connected, you can execute "sudo hotspot-config" as illustrated in this vid
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
+To activate the default talk group, just press PTT once, the second PTT will go to the network.
+To activate another talk group send DTMF 91 <talkgroup> #
+To leave the active talk group send DTMF 91 0 #
+The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
+
 # Hotspot with enclosure
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6e67908
