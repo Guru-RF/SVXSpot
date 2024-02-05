@@ -78,12 +78,15 @@ sudo bash install-svxlink.sh
 ```
 
 ### Tuning Input Volume ###
-(modify hotspot_volume to the desired volume)
+(modify /usr/sbin/hotspot_volume to the desired volume)
 ```console
 systemctl stop svxlink
 /sbin/hotspot_volume
 arecord -V stereo -r 44100 -f S16_LE -c 2 /dev/null
 ```
+
+### Modify RF Module settings
+(modify /usr/sbin/hotspot for rf module changes)
 
 ### Simple Test ###
 Sending D1# dtmf on the configured frequency starts the parrot.<br>
