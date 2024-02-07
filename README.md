@@ -45,6 +45,8 @@ To leave the active talk group send DTMF 91 0 #
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
+For adding additional networks you can use the 'nmtui' provided by the Pi OS.
+
 # Hotspot with enclosure
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6e67908
