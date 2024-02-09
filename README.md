@@ -43,6 +43,10 @@ To activate another talk group send DTMF 91 talkgroup #
 
 To leave the active talk group send DTMF 91 0 #
 
+To specify various talkgroups for monitoring within the 'hotspot-config', you can indicate them as follows: 8++, 23+, 50, 51, 52, 53, 54, and 55. 
+
+The plus signs denote priority levels.
+
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
 For adding additional networks you can use the 'nmtui' provided by the Pi OS.
