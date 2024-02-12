@@ -1,12 +1,14 @@
 # SVXSpot an SVXLink Analog Hotspot for the Raspberry Pi Zero 
 
-[RF.Guru Analog Hotspot 70CM (UHF)](https://rf.guru/2023-k-041-u) 1/2W Power
+[RF.Guru Analog Hotspot 70CM (UHF)](https://shop.rf.guru/products/2023-p-041-u) 500mW Power
 
-[RF.Guru Analog Hotspot 2M (VHF)](https://rf.guru/2023-k-041-v) 1/2W Power
+[RF.Guru Analog Hotspot 2M (VHF)](https://shop.rf.guru/products/2023-p-041-v) 500mW Power
 
-[RF.Guru Analog Transceiver 70CM (UHF)](https://rf.guru/2023-k-141-u) 1.3W Power (and Low Pass filter)
+[RF.Guru Analog Transceiver 70CM (UHF)](https://shop.rf.guru/products/2023-p-141-u) 1.3W Power (added a Low Pass filter) needs additinal power best used with an external power source like [RF.Guru 
+ Pi Zero PSU](https://shop.rf.guru/products/2021-p-053)
 
-[RF.Guru Analog Transceiver 2M (VHF)](https://rf.guru/2023-k-141-v) 1.3W Power (and Low Pass filter)
+[RF.Guru Analog Transceiver 2M (VHF)](https://shop.rf.guru/products/2023-p-141-v) 1.3W Power (added a Low Pass filter) needs additinal power best used with an external power source like [RF.Guru 
+ Pi Zero PSU](https://shop.rf.guru/products/2021-p-053)
 
 GPIO 12 is the COS input from the Radio chip.
 GPIO 16 drives the PTT.
