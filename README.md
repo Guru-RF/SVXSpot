@@ -59,6 +59,8 @@ https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6
 
 # Manual SVXLink and Radiomodule install scripts
 
+(not needed when using the image, this is preinstalled on the image)
+
 Prepare your sd-card with Raspberry PI OS ([Bookworm 32Bit Lite](https://www.raspberrypi.com/software/operating-systems/)) ([Youtube](https://www.youtube.com/watch?v=vxmO_a5WNI8))
 
 Login to your system with ssh add run following commands:
