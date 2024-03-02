@@ -51,7 +51,7 @@ The plus signs denote priority levels.
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
-For adding additional networks you can use the 'nmtui' provided by the Pi OS.
+For adding additional networks you can use the 'sudo nmtui' provided by the Pi OS.
 
 # Hotspot with enclosure
 
