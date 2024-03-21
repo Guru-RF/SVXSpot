@@ -10,8 +10,17 @@
 [RF.Guru Analog Transceiver 2M (VHF)](https://shop.rf.guru/products/2023-p-141-v) 1.3W Power (added a Low Pass filter) needs additinal power best used with an external power source like [RF.Guru 
  Pi Zero PSU](https://shop.rf.guru/products/2021-p-053)
 
-GPIO 12 is the COS input from the Radio chip.
-GPIO 16 drives the PTT.
+###Used PIN's:
+3 GPIO2
+6 GPIO3
+35 GPIO19
+8 TX
+10 RX
+12 CLK
+32 GPIO12 -> COS input from the radio chip
+36 GPIO16 -> PTT pin
+38 GPIO20
+40 GPIO21
 
 These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands. (Like APRS iGate/Digipeater, packet etc...)
 
