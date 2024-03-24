@@ -66,7 +66,7 @@ For adding additional networks you can use the 'sudo nmtui' provided by the Pi O
 
 # Choosing a frequency and ctcss tone
 
-We advice a frequency not in use by nearby repeaters, also do not use ISM frequency 433Mhz ... i use 439.100 on 70cm and 145.250 on 2m
+We advice a frequency not in use by nearby repeaters, also do not use ISM frequency 433Mhz ... we use 439.100 on 70cm and 145.250 on 2m
 
 For CTCSS tone ... use a tone not localy used ... we use 88.5
 
