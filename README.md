@@ -64,6 +64,12 @@ The hotspot also has a local portal you can access it via it's hostname if you n
 
 For adding additional networks you can use the 'sudo nmtui' provided by the Pi OS.
 
+# Choosing a frequency and ctcss tone
+
+We advice a frequency not in use by nearby repeaters, also do not use ISM frequency 433Mhz ... i use 439.100 on 70cm and on 2m
+
+For CTCSS tone ... use a tone not localy used ... we use 88.5
+
 # Hotspot with enclosure
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6e67908
