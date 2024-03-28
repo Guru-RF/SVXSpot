@@ -54,12 +54,6 @@ as illustrated in this video:
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
-For upgrading the PI use:
-```console
-sudo apt -y update && sudo apt -y upgrade
-```
-Do not use full-upgrade as it updates the kernel and renders the DAC kernel module unusable !
-
 To activate the default talk group, just press PTT once, the second PTT will go to the network.
 
 The chip has a deviation of 2.5khz ... for best audio experience send with Narrow FM (FM-N), it will sound better !
@@ -85,6 +79,18 @@ provided by the Pi OS.
 We advice a frequency not in use by nearby repeaters, also do not use ISM frequency 433Mhz ... we use 439.100 on 70cm and 145.250 on 2m
 
 For CTCSS tone ... use a tone not localy used ... we use 88.5
+
+# PI OS upgrade procedure
+
+For upgrading the PI use:
+```console
+sudo apt -y update && sudo apt -y full-upgrade
+```
+If dac/adc kernel module is absent after upgrade, you can check this with:
+```console
+sudo aplay -a
+```
+It should list a soundcard if this is not the case ...
 
 # Hotspot with enclosure
 
