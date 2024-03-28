@@ -19,6 +19,6 @@ echo "$OLD_KERNELS"
 
 if [ "$1" == "exec" ]; then
     for PACKAGE in $OLD_KERNELS; do
-        yes | apt purge "$PACKAGE"
+        yes | apt -y purge "$PACKAGE"
     done
 fi
