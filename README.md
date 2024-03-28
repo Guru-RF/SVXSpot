@@ -46,7 +46,11 @@ To complete the final configuration step, SSH is required. For Linux/Mac, SSH is
 
 Ensure that you download Putty for the correct architecture; for the majority, it will be x86 64-bit.
 
-Once connected, you can execute "sudo hotspot-config" as illustrated in this video:
+Once connected, you can execute:
+```console
+sudo hotspot-config
+```
+as illustrated in this video:
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
