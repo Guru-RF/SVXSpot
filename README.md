@@ -84,7 +84,10 @@ For CTCSS tone ... use a tone not localy used ... we use 88.5
 
 For upgrading the PI use:
 ```console
+curl -O https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/remove-old-kernels.sh
+sudo bash ./remove-old-kernels.sh exec
 sudo apt -y update && sudo apt -y full-upgrade
+sudo reboot
 ```
 If dac/adc kernel module is absent after upgrade, you can check this with:
 ```console
@@ -95,7 +98,14 @@ It should list a soundcard if this is not the case ... PI OS broke it and we nee
 git clone https://github.com/waveshare/WM8960-Audio-HAT
 cd WM8960-Audio-HAT/
 sudo ./install.sh
-reboot
+sudo reboot
+```
+Remove old kernels & remove old dependancies
+```console
+curl -O https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/remove-old-kernels.sh
+sudo bash ./remove-old-kernels.sh exec
+sudo apt -y update && sudo apt -y full-upgrade
+sudo apt -y autoremove
 ```
 
 # Hotspot with enclosure
