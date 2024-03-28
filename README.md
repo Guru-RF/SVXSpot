@@ -50,6 +50,8 @@ Once connected, you can execute "sudo hotspot-config" as illustrated in this vid
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
+For upgrading the PI use sudo apt -y update && sudo apt -y upgrade ! Do not use full-upgrade as it updates the kernel and renders the DAC kernel module unusable !
+
 To activate the default talk group, just press PTT once, the second PTT will go to the network.
 
 The chip has a deviation of 2.5khz ... for best audio experience send with Narrow FM (FM-N), it will sound better !
