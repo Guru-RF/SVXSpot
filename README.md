@@ -80,7 +80,7 @@ We advice a frequency not in use by nearby repeaters, also do not use ISM freque
 
 For CTCSS tone ... use a tone not localy used ... we use 88.5
 
-# PI OS upgrade procedure
+# PI OS full upgrade procedure
 
 For upgrading the PI use:
 ```console
@@ -90,7 +90,13 @@ If dac/adc kernel module is absent after upgrade, you can check this with:
 ```console
 sudo aplay -a
 ```
-It should list a soundcard if this is not the case ...
+It should list a soundcard if this is not the case ... PI OS broke it and we need to manualy reinstall te soundcard module !
+```console
+git clone https://github.com/waveshare/WM8960-Audio-HAT
+cd WM8960-Audio-HAT/
+sudo ./install.sh
+reboot
+```
 
 # Hotspot with enclosure
 
