@@ -204,6 +204,10 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--LON--/${LON}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LOC--/${LOC}/g" /etc/svxlink/node_info.json
 	rm /usr/sbin/hotspot
+  say "Locking kernels to prevent issues with gpio deprication !"
+  run "apt-mark hold libraspberrypi-bin libraspberrypi-dev libraspberrypi-doc libraspberrypi0"
+  run "apt-mark hold raspberrypi-bootloader raspberrypi-kernel raspberrypi-kernel-headers"
+  say "Configuring hotspot"
   echo "sa818 --port /dev/ttyAMA0 volume --level 1" > /usr/sbin/hotspot
   if [[ "${CTCSSTX}" == "Yes" ]]; then
     echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --squelch 8 --close-tail no" >> /usr/sbin/hotspot
