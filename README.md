@@ -80,34 +80,6 @@ We advice a frequency not in use by nearby repeaters, also do not use ISM freque
 
 For CTCSS tone ... use a tone not localy used ... we use 88.5
 
-# PI OS full upgrade procedure
-
-For upgrading the PI use:
-```console
-curl -O https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/remove-old-kernels.sh
-sudo bash ./remove-old-kernels.sh exec
-sudo apt -y update && sudo apt -y full-upgrade
-sudo reboot
-```
-If dac/adc kernel module is absent after upgrade, you can check this with:
-```console
-sudo aplay -a
-```
-It should list a soundcard if this is not the case ... PI OS broke it and we need to manualy reinstall te soundcard module !
-```console
-git clone https://github.com/waveshare/WM8960-Audio-HAT
-cd WM8960-Audio-HAT/
-sudo ./install.sh
-sudo reboot
-```
-Remove old kernels & remove old dependancies
-```console
-curl -O https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/remove-old-kernels.sh
-sudo bash ./remove-old-kernels.sh exec
-sudo apt -y update && sudo apt -y full-upgrade
-sudo apt -y autoremove
-```
-
 # Hotspot with enclosure
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6e67908
