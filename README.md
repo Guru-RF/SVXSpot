@@ -54,7 +54,11 @@ as illustrated in this video:
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
-For upgrading the PI use sudo apt -y update && sudo apt -y upgrade ! Do not use full-upgrade as it updates the kernel and renders the DAC kernel module unusable !
+For upgrading the PI use:
+```console
+sudo apt -y update && sudo apt -y upgrade
+```
+Do not use full-upgrade as it updates the kernel and renders the DAC kernel module unusable !
 
 To activate the default talk group, just press PTT once, the second PTT will go to the network.
 
@@ -70,7 +74,11 @@ The plus signs denote priority levels.
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
-For adding additional networks you can use the 'sudo nmtui' provided by the Pi OS.
+For adding additional networks you can use the
+```console
+sudo nmtui 
+```
+provided by the Pi OS.
 
 # Choosing a frequency and ctcss tone
 
