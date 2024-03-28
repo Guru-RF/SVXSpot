@@ -20,6 +20,7 @@ OLDLOCATION=$(grep -i location /etc/svxlink/node_info.json  | awk '{ print $2}' 
 OLDLAT=$(grep -i lat /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tr -cd '[:alnum:]._-')
 OLDLON=$(grep -i lon /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tr -cd '[:alnum:]._-')
 OLDLOC=$(grep -i loc /etc/svxlink/node_info.json  | awk '{ print $2}' | tr "," "\n" | tail -n 1 |  tr -cd '[:alnum:]._-')
+QSYTIMEOUT=$(cat /etc/svxlink/svxlink.conf | grep QSY_PENDING_TIMEOUT | head -n 1 | tr "=" "\n" | tail -n 1)
 if [[ "${OLDTG}" == *"--"* ]]; then
   OLDTG=8
 fi
@@ -118,6 +119,10 @@ fi
 TONE=$(gum input --value "${OLDTONE}")
 gum style --foreground 212 "${TONE}"
 
+gum style --foreground "#04B575" "CTCSS on tx:"
+CTCSSTX=$(gum choose "Yes" "No")
+gum style --foreground 212 "${CTCSSTX}"
+
 gum style --foreground "#04B575" "Enter Location:"
 if [[ "${OLDLOCATION}" == "" ]]; then
   OLDLOCATION="Saint Ghislain"
@@ -159,6 +164,13 @@ if [[ "${OLDTGS}" == "" ]]; then
 fi
 TGS=$(gum input --value "${OLDTGS}")
 gum style --foreground 212 "${TGS}"
+
+gum style --foreground "#04B575" "Enter QSY timeout:"
+QSYTIMEOUT=$(gum input --value "${QSYTIMEOUT}")
+if [[ "${QSYTIMEOUT}" == "" ]]; then
+  QSYTIMEOUT=15
+fi
+gum style --foreground 212 "${QSYTIMEOUT}"
   
 
 EPOCH=$(date +%s)
@@ -186,13 +198,18 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--SVXCALL--/${SVXCALL}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--SVXPWD--/${SVXPWD}/g" /etc/svxlink/svxlink.conf
+	perl -i -pe "s/--QSYTIMEOUT--/${QSYTIMEOUT}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--LOCATION--/${LOCATION}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LAT--/${LAT}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LON--/${LON}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LOC--/${LOC}/g" /etc/svxlink/node_info.json
 	rm /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 volume --level 1" > /usr/sbin/hotspot
-  echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss 0,${TONE} --squelch 8 --close-tail no" >> /usr/sbin/hotspot
+  if [[ "${CTCSSTX}" == "Yes" ]]; then
+    echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --squelch 8 --close-tail no" >> /usr/sbin/hotspot
+  elif
+    echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss 0,${TONE} --squelch 8 --close-tail no" >> /usr/sbin/hotspot
+  fi
   echo "sa818 --port /dev/ttyAMA0 filters --emphasis yes --highpass no --lowpass no" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
   /usr/sbin/hotspot
