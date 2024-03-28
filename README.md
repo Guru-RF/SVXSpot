@@ -36,6 +36,8 @@ Use the latest release of PI-Imager [Github](https://github.com/raspberrypi/rpi-
 
 [Youtube demonstration of how to use PI-Imager on MacOS X](https://www.youtube.com/watch?v=UeiBUUef2c0)
 
+Boot the hotspot with a descent power supply that can provide enough current and has a stable voltage > 5v !
+
 It appears that the Raspberry Pi freezes after resizing the file system. Currently, after the initial boot, wait for 10 minutes, disconnect the power, and then restart. We suspect this issue is a bug and anticipate it will likely be resolved in a future release of pi-shrink.
 
 To complete the final configuration step, SSH is required. For Linux/Mac, SSH is installed by default. Open a terminal and type ssh username@ip. However, for Windows, you'll need an additional application, such as Putty.
