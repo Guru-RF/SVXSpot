@@ -154,7 +154,7 @@ LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
 
 gum style --foreground "#04B575" "Hide Location info ?:"
-HIDDEN=$(gum choose "True" "False")
+HIDDEN=$(gum choose "False" "True")
 gum style --foreground 212 "${HIDDEN}"
 
 gum style --foreground "#04B575" "Enter default talk group:"
