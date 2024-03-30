@@ -1,15 +1,15 @@
 {
   "nodeLocation": "--LOCATION--",
-  "hidden": false,
+  "hidden": --HIDDEN--,
   "sysop": "--CALL--",
   "qth": [
     {
       "name": "RF.Guru Hotspot",
-        "pos": {
-                "lat": "--LAT--",
-                "long": "--LON--",
-                "loc": "--LOC--"
-            },
+      "pos": {
+        "lat": "--LAT--",
+        "long": "--LON--",
+        "loc": "--LOC--"
+      },
       "rx": {
         "A": {
           "name": "Rx1",

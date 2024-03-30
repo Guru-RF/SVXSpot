@@ -153,6 +153,10 @@ fi
 LOC=$(gum input --value "${OLDLOC}")
 gum style --foreground 212 "${LOC}"
 
+gum style --foreground "#04B575" "Hide Location info ?:"
+HIDDEN=$(gum choose "True" "False")
+gum style --foreground 212 "${HIDDEN}"
+
 gum style --foreground "#04B575" "Enter default talk group:"
 if [[ "${OLDTG}" == "" ]]; then
   OLDTG=8
@@ -218,6 +222,7 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--LAT--/${LAT}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LON--/${LON}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LOC--/${LOC}/g" /etc/svxlink/node_info.json
+	perl -i -pe "s/--HIDDEN--/${HIDDEN}/g" /etc/svxlink/node_info.json
 	rm /usr/sbin/hotspot
   say "Locking kernels to prevent issues with gpio deprication !"
   run "apt -y update"
