@@ -60,9 +60,6 @@ say "Disabling ACT led"
 run "grep -q 'dtparam=act_led_trigger=none' /boot/firmware/config.txt || echo 'dtparam=act_led_trigger=none' >> /boot/firmware/config.txt"
 run "grep -q 'dtparam=act_led_activelow=on' /boot/firmware/config.txt || echo 'dtparam=act_led_activelow=on' >> /boot/firmware/config.txt"
 
-say "Disabling HDMI"
-run "perl -i -pe 's/^exit 0/\/usr\/bin\/tvservice -o; exit 0/g' /etc/rc.local"
-
 say "Installing hotspot_volume"
 run "cp hotspot_volume /usr/sbin/hotspot_volume"
 run "chmod a+x /usr/sbin/hotspot_volume"
