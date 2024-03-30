@@ -11,6 +11,8 @@ say () {
   printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
 }
 
+OLDCPVOL=$(grep volume /usr/sbin/hotspot | awk '{ print $6}'| tail -n 1)
+OLDRFVOL=$(grep Capture /usr/sbin/hotspot_volume | awk '{ print $4}'| tail -n 1 | sed 's/%$//')
 OLDFREQ=$(grep freq /usr/sbin/hotspot | awk '{ print $6}')
 OLDTONE=$(grep ctcss /usr/sbin/hotspot | awk '{ print $8}' | tr "," "\n" | tail -n 1)
 OLDCALL=$(cat /etc/svxlink/svxlink.conf | grep CALL | head -n 1 | tr "=" "\n" | tail -n 1)
@@ -171,7 +173,20 @@ if [[ "${QSYTIMEOUT}" == "" ]]; then
   QSYTIMEOUT=15
 fi
 gum style --foreground 212 "${QSYTIMEOUT}"
-  
+
+gum style --foreground "#04B575" "Enter RF input volume [17-23] (default 19):"
+RFVOL=$(gum input --value "${OLDRFVOL}")
+if [[ "${RFVOL}" == "" ]]; then
+  RFVOL=19
+fi
+gum style --foreground 212 "${RFVOL}"
+
+gum style --foreground "#04B575" "Enter RF compression [1-8] (default 2):"
+CPVOL=$(gum input --value "${OLDCPVOL}")
+if [[ "${CPVOL}" == "" ]]; then
+  RFVOL=2
+fi
+gum style --foreground 212 "${CPVOL}"
 
 EPOCH=$(date +%s)
 
@@ -208,7 +223,9 @@ if [ $RESULT -eq 0 ]; then
   run "apt -y update"
   run "apt-mark hold linux-image*"
   say "Configuring hotspot"
-  echo "sa818 --port /dev/ttyAMA0 volume --level 1" > /usr/sbin/hotspot
+  echo "#!/bin/bash" > /usr/sbin/hotspot
+  echo "" >> /usr/sbin/hotspot
+  echo "sa818 --port /dev/ttyAMA0 volume --level ${CPVOL}" >> /usr/sbin/hotspot
   if [[ "${CTCSSTX}" == "Yes" ]]; then
     echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --squelch 8 --close-tail no" >> /usr/sbin/hotspot
   else
@@ -217,6 +234,26 @@ if [ $RESULT -eq 0 ]; then
   echo "sa818 --port /dev/ttyAMA0 filters --emphasis yes --highpass no --lowpass no" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
   /usr/sbin/hotspot
+  say "Configuring hotspot volume"
+  echo "#!/bin/bash" > /usr/sbin/hotspot_volume
+  echo "" >> /usr/sbin/hotspot_volume
+  echo "# audio to radio Module" >> /usr/sbin/hotspot_volume
+  echo "amixer set 'Headphone' 80%" >> /usr/sbin/hotspot_volume
+  echo "# audio from radio Module" >> /usr/sbin/hotspot_volume
+  echo "amixer set 'Capture' ${RFVOL}%" >> /usr/sbin/hotspot_volume
+  echo "" >> /usr/sbin/hotspot_volume
+  echo "
+# Disable ALC en Deemphasis
+amixer cset iface=MIXER,name='DAC Deemphasis Switch' 0
+amixer cset iface=MIXER,name='ALC Function' 0
+amixer cset iface=MIXER,name='ALC Target' 0
+amixer cset iface=MIXER,name='ALC Mode' 1
+amixer cset iface=MIXER,name='ALC Attack' 0
+amixer cset iface=MIXER,name='ALC Decay' 0
+amixer cset iface=MIXER,name='ALC Hold Time' 0
+amixer cset iface=MIXER,name='ALC Max Gain' 0
+amixer cset iface=MIXER,name='ALC Min Gain' 0
+amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotspot_volume
   /usr/sbin/hotspot_volume > /dev/null 2>&1
 	systemctl restart svxlink
   say "Send CTCSS ${TONE} to ${FREQ} with D1# to activate the parrot (to test audio levels)"
