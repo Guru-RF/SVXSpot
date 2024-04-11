@@ -24,7 +24,7 @@
 
 These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands. (Like APRS iGate/Digipeater, packet etc...)
 
-[anchor](#barebone)# Barebone
+# [Barebone]
 
 If you prefer to handle everything manually, you can find the necessary resources here:
 
