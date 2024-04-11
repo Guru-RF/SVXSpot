@@ -24,6 +24,13 @@
 
 These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands. (Like APRS iGate/Digipeater, packet etc...)
 
+# Barebone
+
+If you prefer to handle everything manually, you can find the necessary resources here:
+
+- RF Module (SA818) can be programmed via [https://github.com/Guru-RF/SA818](https://github.com/Guru-RF/SA818).
+- The I2C audio chip kernel module can be found here [https://github.com/waveshare/WM8960-Audio-HAT](https://github.com/waveshare/WM8960-Audio-HAT).
+
 # SVXLink Bookworm Image #
 
 [Bookworm 32Bit Lite 2024-01-29 Image](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-01-29.img.gz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
