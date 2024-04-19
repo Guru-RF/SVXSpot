@@ -87,6 +87,13 @@ We advice a frequency not in use by nearby repeaters, also do not use ISM freque
 
 For CTCSS tone ... use a tone not localy used ... we use 88.5
 
+# Modify talk groups on the dashboard
+
+Edit the following file:
+```console
+sudo vi /var/www/html/include/tgdb.php
+```
+
 # Hotspot with enclosure
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6e67908
