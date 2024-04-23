@@ -37,6 +37,8 @@ If you prefer to handle everything manually, you can find the necessary resource
 
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
+You can set username/password and wifi credentials in the Raspberry PI Imager tool ... there is no default username/password !
+
 Use the latest release of PI-Imager [Github](https://github.com/raspberrypi/rpi-imager/releases)
 
 [Youtube demonstration of how to use PI-Imager on Windows 11](https://www.youtube.com/watch?v=mOqekYMIBgU)
