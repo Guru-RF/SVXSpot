@@ -24,6 +24,12 @@
 
 These boards are also suitable for conducting analog ham radio experiments within the 70cm and 2m ham radio frequency bands. (Like APRS iGate/Digipeater, packet etc...)
 
+# Antenna
+
+The hotspot is not suitable for connecting an outdoor antenna because it lacks a sufficient low-pass filter. However, the transceiver version is equipped with a low-pass filter and is suitable for transmitting via an outdoor antenna.
+
+The RF 50 ohm output requires an antenna with a SWR (Standing Wave Ratio) of less than 4:1, which is considered reasonable. If you experience sound distortion, it could indicate that the antenna being used has a high SWR, leading to common-mode currents that may affect the RF chip. To test, use a 50-ohm dummy load (for UHF) and consider using a more suitable antenna. We recommend and sell antennas that work without any issues.
+
 # Barebone
 
 If you prefer to handle everything manually, you can find the necessary resources here:
