@@ -74,17 +74,14 @@ say "Sysctl UDP tuning parameters"
 run "cp 97-rfguru.conf /etc/sysctl.d/97-rfguru.conf"
 
 say "Install Gum"
-run "apt install golang -y"
-run "go install github.com/charmbracelet/gum@latest"
-run "cp /root/go/bin/gum /usr/sbin/gum"
-run "rm -fr /root/go"
+run "cp gum /usr/sbin/gum"
+run "chmod a+rx /usr/sbin/gum"
 
 say "Install hostspot-config"
 run "cp hotspot-config /usr/sbin/hotspot-config"
 run "chmod +x /usr/sbin/hotspot-config"
 
 say "Installing default configurations"
-run "cat gpio.conf > /etc/svxlink/gpio.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf.orig"
 
