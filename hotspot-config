@@ -12,9 +12,14 @@ say () {
 }
 
 EPOCH=$(date +%s)
+KERNEL=$(uname -r)
 
 say "Downloading latest hotspot-config"
 run "rm -f /tmp/hotspot-config-online"
-run "wget --no-cache -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-config-online?${EPOCH} > /dev/null 2>&1"
+if [[ "${KERNEL:0:3}" == "6.6" ]]; then
+  run "wget --no-cache -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-config-online-6-6?${EPOCH} > /dev/null 2>&1"
+else
+  run "wget --no-cache -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-config-online?${EPOCH} > /dev/null 2>&1"
+fi
 run "exec bash /tmp/hotspot-config-online"
 
