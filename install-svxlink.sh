@@ -16,10 +16,6 @@ MYPATH=${PWD}
 say "Installing SVXLink Prerequisites"
 run "apt install moreutils build-essential g++ make cmake libsigc++-2.0-dev php libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet sox bc avahi-daemon avahi-utils -y"
 
-say "Disabling apache"
-run "systemctl disable apache2"
-run "systemctl disable apache-htcacheclean"
-
 say "Adding svxlink user and groups"
 run "groupadd svxlink"
 run "useradd -g svxlink -d /etc/svxlink svxlink"
@@ -71,7 +67,7 @@ run "cp hotspot_logger /usr/sbin/hotspot_logger"
 run "chmod +x /usr/sbin/hotspot_logger"
 
 say "Install hotspot_dtmf"
-run "cp hhotspot_dtmf /usr/sbin/hotspot_dtmf"
+run "cp hotspot_dtmf /usr/sbin/hotspot_dtmf"
 run "chmod +x /usr/sbin/hotspot_dtmf"
 
 say "Sysctl UDP tuning parameters"
@@ -91,12 +87,9 @@ say "Installing default configurations"
 run "cat gpio.conf > /etc/svxlink/gpio.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf.orig"
-run "cat svxlink_gpio_up > /usr/sbin/svxlink_gpio_up"
 
 say "Installing systemd services"
-run "systemctl enable svxlink_gpio_setup"
 run "systemctl enable svxlink"
-run "systemctl start svxlink_gpio_setup.service"
 
 say "Cleanup system"
 run "sudo apt clean"
