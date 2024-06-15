@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+FILE=/tmp/svxlink-message
+if test -f "$FILE"; then
+	cat ${FILE}
+	rm -f ${FILE}
+fi

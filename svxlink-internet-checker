@@ -1,0 +1,27 @@
+#!/bin/bash
+
+FILE=/tmp/state
+SVXMSG=/tmp/svxlink-message
+
+if test -f "${FILE}"; then
+	STATE=$(cat ${FILE})
+else
+	echo offline > ${FILE}
+	STATE=$(cat ${FILE})
+fi
+
+if : >/dev/tcp/8.8.8.8/53; then
+	if [ "${STATE}" == "online" ]; then
+		echo "still online"
+	else
+		echo "online" > ${FILE}
+		echo "online" > ${SVXMSG}
+	fi
+else
+	if [ "${STATE}" == "offline" ]; then
+		echo "still offline"
+	else
+		echo "offline" > ${FILE}
+		echo "offline" > ${SVXMSG}
+	fi
+fi
