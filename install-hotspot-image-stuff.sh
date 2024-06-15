@@ -44,6 +44,8 @@ say "Remove logs via rm -f /var/log/svxlink"
 
 say "Clean systemd logs via sudo systemd-tmpfiles --clean"
 
+say "Confuscate svxlink.conf !"
+
 say "Remove ssh keys via rm -f /etc/ssh/ssh_host*"
 
 say "Remove history with history -c && history -w"
