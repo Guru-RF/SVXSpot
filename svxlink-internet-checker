@@ -14,6 +14,7 @@ if : >/dev/tcp/35.189.215.208/443; then
 	if [ "${STATE}" == "online" ]; then
 		echo "still online"
 	else
+		rm -f ${FILE}
 		echo "online" > ${FILE}
 		echo "online" > ${SVXMSG}
 		chown svxlink ${FILE}
@@ -22,7 +23,8 @@ if : >/dev/tcp/35.189.215.208/443; then
 else
 	if [ "${STATE}" == "offline" ]; then
 		echo "still offline"
-	else
+	else	
+		rm -f ${FILE}
 		echo "offline" > ${FILE}
 		echo "offline" > ${SVXMSG}
 		chown svxlink ${FILE}
