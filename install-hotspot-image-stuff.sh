@@ -42,7 +42,7 @@ say "Install https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-ac
 
 say "Remove ssh keys via rm -f /etc/ssh/ssh_host*"
 
-say "Remove WiFi's with nmcli"
+say "Remove WiFi's with nmtui"
 
 say "Remove history with history -c && history -w"
 
