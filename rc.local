@@ -19,9 +19,8 @@ fi
 
 if [ ! -f /etc/ssh/ssh_host_rsa_key ]
 then
-	rm /etc/ssh/ssh_host_*
 	dpkg-reconfigure openssh-server
-	systemctl restart openssh-server
+	systemctl restart ssh
 fi
 
 exit 0
