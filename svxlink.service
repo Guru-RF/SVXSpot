@@ -26,6 +26,7 @@ After=wm8960-soundcard.service
 [Service]
 EnvironmentFile=/etc/default/svxlink
 PIDFile=${PIDFILE}
+ExecStartPre=-rm -f /tmp/state
 ExecStartPre=-/bin/touch ${LOGFILE}
 ExecStartPre=-/bin/chown ${RUNASUSER} ${LOGFILE}
 ExecStartPre=-/usr/sbin/svxlink_checkalsa
