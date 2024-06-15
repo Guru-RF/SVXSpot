@@ -40,7 +40,12 @@ run "cd /etc/shellinabox/options-enabled && mv 00+Black\ on\ White.css 00_Black\
 
 say "Install https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network manually"
 
-say "Regenerate ssh keys via ./generate-ssh-keys.sh"
+say "Remove ssh keys via rm -f /etc/ssh/ssh_host*"
+
+say "Remove WiFi's with nmcli"
+
+say "Remove history with history -c && history -w"
+
 
 
 
