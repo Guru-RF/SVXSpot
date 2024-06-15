@@ -39,7 +39,7 @@ If you prefer to handle everything manually, you can find the necessary resource
 
 # SVXLink Bookworm Image
 
-[Bookworm 32Bit Lite 2024-01-29 Image](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-01-29.img.gz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
+[Bookworm Image 2024-06-15](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-06-15.img.xz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
 
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
