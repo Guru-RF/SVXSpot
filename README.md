@@ -101,6 +101,11 @@ Edit the following file:
 ```console
 sudo vi /var/www/html/include/tgdb.php
 ```
+# Accesspoppup
+
+[Accesspoppup](https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network) is installed by default, if no WiFi network is reachable it will automaticaly go the a predifened hotspot where you can connect to.
+
+SSID AccessPopup with passwd 1234567890
 
 # Hotspot with enclosure
 
