@@ -108,6 +108,11 @@ sudo vi /var/www/html/include/tgdb.php
 SSID AccessPopup with passwd 1234567890
 Default IP Hotspot in AccessPopup is [http://192.168.50.5/](http://192.168.50.5/)
 
+# iPhone Personal Hotspot
+
+You need to go to Personal Hotspot setting until the hotspot is connected, there is no option on the iPhone/iPad to have the SSID beeing broadcasted al the time.
+Once connected it works like a charm.
+
 # Hotspot with enclosure
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/5cdcc10a-c380-4bc6-8c2b-18d2c6e67908
