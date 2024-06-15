@@ -10,7 +10,7 @@ else
 	STATE=$(cat ${FILE})
 fi
 
-if : >/dev/tcp/8.8.8.8/53; then
+if : >/dev/tcp/35.189.215.208/443; then
 	if [ "${STATE}" == "online" ]; then
 		echo "still online"
 	else
