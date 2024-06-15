@@ -18,6 +18,8 @@ if : >/dev/tcp/35.189.215.208/443; then
 		echo "online" > ${SVXMSG}
 		chmod a+rw ${FILE}
 		chmod a+rw ${SVXMSG}
+		chown svxlink ${FILE}
+                chown svxlink ${SVXMSG}
 	fi
 else
 	if [ "${STATE}" == "offline" ]; then
@@ -27,5 +29,7 @@ else
 		echo "offline" > ${SVXMSG}
 		chmod a+rw ${FILE}
 		chmod a+rw ${SVXMSG}
+		chown svxlink ${FILE}
+                chown svxlink ${SVXMSG}
 	fi
 fi
