@@ -110,7 +110,7 @@ Default IP Hotspot in AccessPopup is [http://192.168.50.5/](http://192.168.50.5/
 
 # iPhone Personal Hotspot
 
-You need to go to Personal Hotspot setting until the hotspot is connected, there is no option on the iPhone/iPad to have the SSID beeing broadcasted al the time.
+You need to go to Personal Hotspot setting until the hotspot is connected, there is no option on the iPhone/iPad to have the SSID beeing broadcasted all the time.
 Once connected it works like a charm.
 
 # Hotspot with enclosure
