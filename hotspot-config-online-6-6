@@ -1,5 +1,7 @@
 #!/bin/bash
 
+TERM=xterm-256color
+
 run() {
   exec=$1
   printf "\x1b[38;5;104m --> ${exec}\x1b[39m\n"
