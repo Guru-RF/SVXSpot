@@ -458,12 +458,20 @@ proc dtmf_cmd_received {cmd} {
   #}
 
   # Example: Custom command executed when DTMF 99 is received
-  #if {$cmd == "99"} {
-  #  puts "Executing external command"
-  #  playMsg "Core" "online"
-  #  exec ls &
-  #  return 1
-  #}
+  if {$cmd == "D911"} {
+    set runcmd [exec /usr/sbin/mylocalip];  
+    puts "Local IP Adress : $runcmd"
+    set splitip [split $runcmd .]
+    lassign $splitip ip1 ip2 ip3 ip4
+    spellWord $ip1;
+    playMsg "Default" "decimal";
+    spellWord $ip2;
+    playMsg "Default" "decimal";
+    spellWord $ip3;
+    playMsg "Default" "decimal";
+    spellWord $ip4;
+    return 1
+  }
 
   return 0
 }
