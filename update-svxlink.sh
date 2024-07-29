@@ -34,4 +34,15 @@ run "cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -
 run "make -j1"
 run "make doc"
 run "make install"
+
+say "Updating Logic.tcl"
+run "wget https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/Logic.tcl"
+run "cp Logic.tcl /usr/share/svxlink/events.d/local/Logic.tcl"
+
+say "Cleanup"
+run "cd /tmp && rm -fr svxlink"
+
+say "Restart svxlink"
+run "systemctl restart svxlink"
+
 cd ${MYPATH}
