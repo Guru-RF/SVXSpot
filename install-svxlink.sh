@@ -14,7 +14,7 @@ say () {
 MYPATH=${PWD}
 
 say "Installing SVXLink Prerequisites"
-run "apt install ladspa-sdk moreutils build-essential g++ make cmake libsigc++-2.0-dev php libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet sox bc avahi-daemon avahi-utils -y"
+run "apt install libssl-dev ladspa-sdk moreutils build-essential g++ make cmake libsigc++-2.0-dev php libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet sox bc avahi-daemon avahi-utils -y"
 
 say "Adding svxlink user and groups"
 run "groupadd svxlink"
@@ -23,7 +23,7 @@ run "usermod -aG audio,nogroup,svxlink,plugdev svxlink"
 run "usermod -aG gpio svxlink"
 
 say "Installing/Compiling SVXLink"
-run "git clone https://github.com/sm0svx/svxlink.git"
+run "git clone --branch maint https://github.com/sm0svx/svxlink.git"
 run "mkdir svxlink/src/build"
 run "cd svxlink/src/build/"
 run "cmake -DUSE_QT=OFF -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONF_INSTALL_DIR=/etc -DLOCAL_STATE_DIR=/var -DWITH_SYSTEMD=ON  .."
