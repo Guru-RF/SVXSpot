@@ -77,6 +77,10 @@ say "Install Gum"
 run "cp gum /usr/sbin/gum"
 run "chmod a+rx /usr/sbin/gum"
 
+say "Install svxlink-update"
+run "cp svxlink-update.sh /usr/sbin/svxlink-update"
+run "chmod +x /usr/sbin/svxlink-update"
+
 say "Install hostspot-config"
 run "cp hotspot-config /usr/sbin/hotspot-config"
 run "chmod +x /usr/sbin/hotspot-config"
