@@ -39,10 +39,17 @@ say "Updating Logic.tcl"
 run "wget https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/Logic.tcl"
 run "cp Logic.tcl /usr/share/svxlink/events.d/local/Logic.tcl"
 
+say "Updating svxlink.service"
+run "cp svxlink.service /lib/systemd/system/svxlink.service"
+
+say "Updating remotetrx.service"
+run "cp remotetrx.service /lib/systemd/system/remotetrx.service"
+
 say "Cleanup"
 run "cd /tmp && rm -fr svxlink"
 
 say "Restart svxlink"
+run "systemctl daemon-reload"
 run "systemctl restart svxlink"
 
 cd ${MYPATH}
