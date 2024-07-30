@@ -1,0 +1,25 @@
+{
+  "nodeLocation": "MiddleOfNowhere",
+  "hidden": false,
+  "sysop": "ON6URE-M",
+  "qth": [
+    {
+      "name": "RF.Guru Hotspot",
+      "pos": {
+        "lat": "51.000000",
+        "long": "2.000000",
+        "loc": "JO00aa"
+      },
+      "rx": {
+        "A": {
+          "name": "Rx1",
+        },
+      },
+      "tx": {
+        "A": {
+          "name": "Tx1",
+        }
+      }
+    }
+  ]
+}
