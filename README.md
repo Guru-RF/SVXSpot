@@ -97,10 +97,16 @@ For CTCSS tone ... use a tone not localy used ... we use 88.5
 
 # Modify talk groups on the dashboard
 
-Edit the following file:
+Edit the following file for base talkgroups:
 ```console
 sudo vi /var/www/html/include/tgdb.php
 ```
+
+Edit the following file for talkgroup buttons:
+```console
+sudo vi /var/www/html/include/config.inc.php
+```
+
 # Accesspopup
 
 [accesspopup](https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network) is installed by default, if no WiFi network is reachable it will automaticaly go the a predifened hotspot where you can connect to.
