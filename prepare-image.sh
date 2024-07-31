@@ -18,6 +18,8 @@ fi
 
 MYPATH=${PWD}
 
+say "Stop svxlink"
+run "systemctl stop svxlink"
 say "remove old kernels"
 sudo bash ./remove-old-kernels.sh
 say "cleanup logs"
