@@ -23,6 +23,10 @@ cd /tmp
 say "Run apt autoremove"
 run "apt -y autoremove"
 
+say "Stop svxlink & apache"
+run "systemctl stop svxlink"
+run "systemctl stop apache2"
+
 say "Installing SVXLink Prerequisites"
 run "apt install libssl-dev ladspa-sdk moreutils build-essential g++ make cmake libsigc++-2.0-dev php libgsm1-dev libudev-dev libpopt-dev tcl-dev libgpiod-dev gpiod libgcrypt20-dev libspeex-dev libasound2-dev alsa-utils libjsoncpp-dev libopus-dev rtl-sdr libcurl4-openssl-dev libogg-dev librtlsdr-dev groff doxygen graphviz python3-serial toilet sox bc avahi-daemon avahi-utils -y"
 
@@ -51,7 +55,9 @@ say "Cleanup"
 run "cd /tmp && rm -fr svxlink"
 
 say "Restart svxlink"
+say "Stop svxlink & apache"
 run "systemctl daemon-reload"
 run "systemctl restart svxlink"
+run "systemctl restart apache2"
 
 cd ${MYPATH}
