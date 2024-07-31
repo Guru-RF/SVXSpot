@@ -26,7 +26,7 @@ say "install default configs"
 cat svxlink.conf.hsdefault > /etc/svxlink/svxlink.conf
 cat node_info.json.hsdefault > /etc/svxlink/node_info.json
 say "remove ssh keys"
-sudo bash ./regenerate-ssh-keys.sh
+sudo bash ./regenerate_ssh_keys.sh
 
 say "remove svxspot repo and"
 say "run:"
