@@ -28,4 +28,6 @@ cat node_info.json.hsdefault > /etc/svxlink/node_info.json
 say "remove ssh keys"
 sudo bash ./regenerate-ssh-keys.sh
 
-say "run history -c also as user"
+say "run:"
+say "history -c && history -w"
+say "as root as root and halt the system"
