@@ -69,9 +69,11 @@ as illustrated in this video:
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
-To activate the default talk group, just press PTT once, the second PTT will go to the network.
+# SVXLink 4 Dummies short HOW-TO
 
-The chip has a deviation of 2.5khz ... for best audio experience send with Narrow FM (FM-N), it will sound better !
+The chip has a deviation of 2.5khz ... for best audio experience send with Narrow FM (FM-N), it will sound better/you will sound better !
+
+To activate the default talk group, just press PTT once, the second PTT will go to the network.
 
 To activate another talk group send DTMF 91 talkgroup #
 
@@ -85,11 +87,15 @@ The plus signs denote priority levels.
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
+# Configuring additional WiFi
+
 For adding additional (wifi) networks you can use the
 ```console
 sudo nmtui 
 ```
 provided by the Pi OS.
+
+Do not remove AccessPoppup !!
 
 # Choosing a frequency and ctcss tone
 
