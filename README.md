@@ -95,7 +95,7 @@ sudo nmtui
 ```
 provided by the Pi OS.
 
-Do not remove AccessPoppup !!
+Do not remove AccessPopup !!
 
 # Choosing a frequency and ctcss tone
 
