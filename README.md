@@ -69,7 +69,7 @@ as illustrated in this video:
 
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
-# SVXLink 4 Dummies short HOW-TO
+# SVXLink quick mini HOW-TO
 
 The chip has a deviation of 2.5khz ... for best audio experience send with Narrow FM (FM-N), it will sound better/you will sound better !
 
