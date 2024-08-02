@@ -97,6 +97,8 @@ provided by the Pi OS.
 
 Do not remove AccessPopup !!
 
+<img width="782" alt="nmtui" src="https://github.com/user-attachments/assets/32490ef3-aaf6-4c4b-8b21-600d9671a287">
+
 # Choosing a frequency and ctcss tone
 
 We advice a frequency not in use by nearby repeaters, also do not use ISM frequency 433Mhz ... we use 439.100 on 70cm and 145.250 on 2m
@@ -121,6 +123,8 @@ sudo vi /var/www/html/include/config.inc.php
 
 SSID Accesspopup with passwd 1234567890
 Default IP Hotspot in AccessPopup is [http://192.168.50.5/](http://192.168.50.5/)
+
+When switching networks (without reboot) it can take up to 2 minutes for the pi to reconnect to a new network !
 
 # iPhone Personal Hotspot
 
