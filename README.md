@@ -124,7 +124,8 @@ sudo vi /var/www/html/include/config.inc.php
 SSID Accesspopup with passwd 1234567890
 Default IP Hotspot in AccessPopup is [http://192.168.50.5/](http://192.168.50.5/)
 
-When switching networks (without reboot) it can take up to 2 minutes for the pi to reconnect to a new network !
+When switching networks (without reboot) it can take up to 2 minutes for the pi to reconnect to a known network !
+2 minutes is quite long ... so please have patience !!!
 
 # iPhone Personal Hotspot
 
