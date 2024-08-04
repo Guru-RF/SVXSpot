@@ -78,11 +78,11 @@ run "cp gum /usr/sbin/gum"
 run "chmod a+rx /usr/sbin/gum"
 
 say "Install svxlink-update-main"
-run "cp svxlink-update-main.sh /usr/sbin/svxlink-update-main"
+run "cp svxlink-update-main.sh /usr/sbin/update-svxlink-main"
 run "chmod +x /usr/sbin/svxlink-update-main"
 
 say "Install svxlink-update-release"
-run "cp svxlink-update-release.sh /usr/sbin/svxlink-update-release"
+run "cp svxlink-update-release.sh /usr/sbin/update-svxlink-release"
 run "chmod +x /usr/sbin/svxlink-update-release"
 
 say "Install hostspot-config"
