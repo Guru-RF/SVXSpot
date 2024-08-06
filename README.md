@@ -55,13 +55,9 @@ Boot the hotspot with a descent power supply that can provide enough current and
 
 It appears that the Raspberry Pi freezes after resizing the file system. Currently, after the initial boot, wait for 10 minutes, disconnect the power, and then restart. We suspect this issue is a bug and anticipate it will likely be resolved in a future release of pi-shrink.
 
-To complete the final configuration step, SSH is perfered but you can also connect via the dashboard by browsing to your hotspots ip (http://<hotspot-ip>). For Linux/Mac, SSH is installed by default. Open a terminal and type ssh username@ip. However, for Windows, you'll need an additional application, such as Putty.
+To complete the final configuration step, you can connect via the dashboard by browsing to your hotspots ip (http://<hotspot-ip>). Chooce shell for shell access !
 
-[Youtube how to install putty on Windows 11](https://www.youtube.com/watch?v=ljL4Wvv8XwI)
-
-Ensure that you download Putty for the correct architecture; for the majority, it will be x86 64-bit.
-
-Once connected, you can execute:
+Once logged in, you can execute:
 ```console
 sudo hotspot-config
 ```
