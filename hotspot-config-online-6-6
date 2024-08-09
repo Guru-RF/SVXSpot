@@ -73,6 +73,9 @@ REFLECTOR=$(gum input --value "${OLDSVXREFL}")
 if [[ "${REFLECTOR}" == "" ]]; then
   REFLECTOR=${OLDSVXREFL}
 fi
+if [[ "${REFLECTOR}" == "34.77.14.144" ]]; then
+  REFLECTOR="hotspots.rf.guru"
+fi
 gum style --foreground 212 "${REFLECTOR}"
 
 gum style --foreground "#04B575" "SVXLINK Reflector User Callsign:"
