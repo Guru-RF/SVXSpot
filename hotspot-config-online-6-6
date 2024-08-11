@@ -186,6 +186,13 @@ if [[ "${QSYTIMEOUT}" == "" ]]; then
 fi
 gum style --foreground 212 -- "${QSYTIMEOUT}"
 
+gum style --foreground "#04B575" "Enter AF output volume [50-80] (default 80):"
+AFVOL=$(gum input --value "${OLDAFVOL}")
+if [[ "${AFVOL}" == "" ]]; then
+  RFVOL=80
+fi
+gum style --foreground 212 "${AFVOL}"
+
 gum style --foreground "#04B575" "Enter RF input volume [17-23] (default 19):"
 RFVOL=$(gum input --value "${OLDRFVOL}")
 if [[ "${RFVOL}" == "" ]]; then
