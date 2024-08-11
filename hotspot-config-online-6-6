@@ -15,6 +15,7 @@ say () {
 
 OLDCPVOL=$(grep volume /usr/sbin/hotspot | awk '{ print $6}'| tail -n 1)
 OLDRFVOL=$(grep Capture /usr/sbin/hotspot_volume | awk '{ print $4}'| tail -n 1 | sed 's/%$//')
+OLDAFVOL=$(grep Headphone /usr/sbin/hotspot_volume | awk '{ print $4}'| tail -n 1 | sed 's/%$//')
 OLDFREQ=$(grep freq /usr/sbin/hotspot | awk '{ print $6}')
 OLDTONE=$(grep ctcss /usr/sbin/hotspot | awk '{ print $8}' | tr "," "\n" | tail -n 1)
 OLDCALL=$(cat /etc/svxlink/svxlink.conf | grep CALL | head -n 1 | tr "=" "\n" | tail -n 1)
@@ -255,7 +256,7 @@ if [ $RESULT -eq 0 ]; then
   echo "#!/bin/bash" > /usr/sbin/hotspot_volume
   echo "" >> /usr/sbin/hotspot_volume
   echo "# audio to radio Module" >> /usr/sbin/hotspot_volume
-  echo "amixer set 'Headphone' 80%" >> /usr/sbin/hotspot_volume
+  echo "amixer set 'Headphone' ${AFVOL}%" >> /usr/sbin/hotspot_volume
   echo "# audio from radio Module" >> /usr/sbin/hotspot_volume
   echo "amixer set 'Capture' ${RFVOL}%" >> /usr/sbin/hotspot_volume
   echo "" >> /usr/sbin/hotspot_volume
