@@ -1,0 +1,17 @@
+[Unit]
+Description=SA8x8 Service
+Requires=svxlink.service
+After=svxlink.service
+
+[Service]
+User=svxlink
+Group=svxlink
+ExecStart=/usr/sbin/sa8x8-controller
+Restart=on-failure
+TimeoutStartSec=60
+TimeoutStopSec=10
+LimitCORE=infinity
+WorkingDirectory=/tmp
+
+[Install]
+WantedBy=multi-user.target
