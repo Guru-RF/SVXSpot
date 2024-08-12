@@ -125,7 +125,7 @@ gum style --foreground 212 "${TGS}"
 
 gum style --foreground "#04B575" "Enter ctcss to talk group mapping:"
 if [[ "${OLDMAPTGS}" == "" ]]; then
-  OLDMAPTGS=67.0:4,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55
+  OLDMAPTGS="67.0:4,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55"
 fi
 MAPTGS=$(gum input --value "${OLDMAPTGS}")
 gum style --foreground 212 "${MAPTGS}"
@@ -243,16 +243,8 @@ amixer cset iface=MIXER,name='ALC Min Gain' 0
 amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotspot_volume
   /usr/sbin/hotspot_volume > /dev/null 2>&1
 	systemctl restart svxlink
-  say "CTCSS 67.0 is mapped to TG4"
-  say "CTCSS 69.3 is mapped to TG8"
-  say "CTCSS 71.9 is mapped to TG23"
-  say "CTCSS 74.4 is mapped to TG9000"
-  say "CTCSS 77.0 is mapped to TG50"
-  say "CTCSS 79.7 is mapped to TG51"
-  say "CTCSS 82.5 is mapped to TG52"
-  say "CTCSS 85.4 is mapped to TG53"
-  say "CTCSS 88.5 is mapped to TG54"
-  say "CTCSS 91.5 is mapped to TG55"
+  say "CTCSS to TG Map: ${MAPTGS}"
+  say "CTCSS in transit is 88.5 !"
 else
 gum style --foreground "#04B575" "Abort!"
 fi
