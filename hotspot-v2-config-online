@@ -243,6 +243,7 @@ amixer cset iface=MIXER,name='ALC Min Gain' 0
 amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotspot_volume
   /usr/sbin/hotspot_volume > /dev/null 2>&1
 	systemctl restart svxlink
+	systemctl restart sa8x8
   say "CTCSS to TG Map: ${MAPTGS}"
   say "CTCSS in transit is 88.5 !"
 else
