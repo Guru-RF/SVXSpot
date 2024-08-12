@@ -44,8 +44,8 @@ run "wget https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/Logic.tcl"
 run "cp Logic.tcl /usr/share/svxlink/events.d/local/Logic.tcl"
 
 say "Updating svxlink.service"
-run "wget https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink.service"
-run "cp svxlink.service /lib/systemd/system/svxlink.service"
+run "wget https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink-v2.service"
+run "cp svxlink-v2.service /lib/systemd/system/svxlink.service"
 
 say "Updating remotetrx.service"
 run "wget https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/remotetrx.service"
