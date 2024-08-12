@@ -245,7 +245,7 @@ amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotsp
 	systemctl restart svxlink
 	systemctl restart sa8x8
   say "CTCSS to TG Map: ${MAPTGS}"
-  say "CTCSS in transit is 88.5 !"
+  say "CTCSS in transmit is 88.5 !"
 else
 gum style --foreground "#04B575" "Abort!"
 fi
