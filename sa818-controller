@@ -1,0 +1,52 @@
+#!/usr/bin/perl
+#
+
+use Time::HiRes qw(usleep);
+use IO::File;
+
+`/usr/local/bin/sa818 --port /dev/ttyAMA0 filters --emphasis yes --highpass yes --lowpass yes  > /dev/null 2>&1`;
+
+$ptt_port   = "/tmp/ptt";
+$logfile    = "/var/log/trx.log";
+
+$PTT = openPtty("$ptt_port"); #  ptt port from SvxLink
+
+while (1) {
+
+    # receive and send ptt state
+  $PTT->read($p, 1);
+  if ($p gt ' ') {
+    $message = $p;
+    if ($p eq "T") {
+	`/usr/bin/gpioset --bias=pull-down gpiochip0 16=0`;
+	&writelog("SA8x8 TX");
+    }
+    if ($p eq "R") {
+	`/usr/bin/gpioset --bias=pull-down gpiochip0 16=1`;
+	&writelog("SA8x8 RX");
+	`/usr/local/bin/sa818 --port /dev/ttyAMA0 filters --emphasis yes --highpass yes --lowpass yes  > /dev/null 2>&1`;
+	&writelog("SA8x8 RESET FILTERS");
+    }
+    undef $p;
+  }
+
+  usleep(1000);
+}
+close($PTT);
+exit;
+
+sub openPtty {
+  my $fh = IO::File->new($_[0], O_NONBLOCK|O_RDWR);
+  if (!(defined $fh)) {
+    &writelog("Can not open $_[0]");
+    print "Can not open $_[0]\n";
+    return 0;
+  }
+  $fh->autoflush(1);
+  &writelog("opening $_[0] OK");
+  return $fh;
+}
+
+sub writelog {
+      print $_[0],"\n";
+}

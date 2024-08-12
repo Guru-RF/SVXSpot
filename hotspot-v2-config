@@ -1,0 +1,25 @@
+#!/bin/bash
+
+run() {
+  exec=$1
+  printf "\x1b[38;5;104m --> ${exec}\x1b[39m\n"
+  eval ${exec}
+}
+
+say () {
+  say=$1
+  printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
+}
+
+EPOCH=$(date +%s)
+KERNEL=$(uname -r)
+
+say "Downloading latest hotspot-config"
+run "rm -f /tmp/hotspot-config-online"
+if [[ "${KERNEL:0:3}" == "6.6" ]]; then
+  run "wget --no-cache -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-v2-config-online?${EPOCH} > /dev/null 2>&1"
+else
+  run "wget --no-cache -O /tmp/hotspot-config-online https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/hotspot-v2-config-online?${EPOCH} > /dev/null 2>&1"
+fi
+run "exec bash /tmp/hotspot-config-online"
+
