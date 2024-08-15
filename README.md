@@ -91,7 +91,7 @@ sudo nmtui
 ```
 provided by the Pi OS.
 
-Do not remove AccessPopup !!
+Do not remove AccessPopup !! It takes about 2 minutes to switch from WiFi network ... so please be patient !
 
 <img width="782" alt="nmtui" src="https://github.com/user-attachments/assets/32490ef3-aaf6-4c4b-8b21-600d9671a287">
 
