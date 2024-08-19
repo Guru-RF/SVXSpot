@@ -123,6 +123,16 @@ Default IP Hotspot in AccessPopup is [http://192.168.50.5/](http://192.168.50.5/
 When switching networks (without reboot) it can take up to 2 minutes for the pi to reconnect to a known network !
 2 minutes is quite long ... so please have patience !!!
 
+To disable accesspupup
+```console
+sudo accesspopup
+```
+
+To re-enable accesspup
+```console
+sudo accesspopup -a
+```
+
 # iPhone Personal Hotspot
 
 You need to go to Personal Hotspot setting until the hotspot is connected, there is no option on the iPhone/iPad to have the SSID beeing broadcasted all the time.
