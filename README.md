@@ -125,12 +125,14 @@ When switching networks (without reboot) it can take up to 2 minutes for the pi 
 
 To disable accesspupup
 ```console
-sudo accesspopup
+sudo systemctl disable AccessPopup.timer
+sudo reboot
 ```
 
 To re-enable accesspup
 ```console
-sudo accesspopup -a
+sudo systemctl enable AccessPopup.timer
+sudo reboot
 ```
 
 # iPhone Personal Hotspot
