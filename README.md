@@ -93,6 +93,8 @@ provided by the Pi OS.
 
 Do not remove AccessPopup !! It takes about 2 minutes to switch from WiFi network ... so please be patient !
 
+Avoid configuring static IPs on the WiFi, as it can disrupt the operation of Accesspopup.
+
 <img width="782" alt="nmtui" src="https://github.com/user-attachments/assets/32490ef3-aaf6-4c4b-8b21-600d9671a287">
 
 # Choosing a frequency and ctcss tone
@@ -122,6 +124,8 @@ Default IP Hotspot in AccessPopup is [http://192.168.50.5/](http://192.168.50.5/
 
 When switching networks (without reboot) it can take up to 2 minutes for the pi to reconnect to a known network !
 2 minutes is quite long ... so please have patience !!!
+
+Avoid configuring static IPs on the WiFi, as it can disrupt the operation of Accesspopup !
 
 To disable accesspupup
 ```console
