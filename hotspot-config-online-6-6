@@ -245,7 +245,7 @@ if [ $RESULT -eq 0 ]; then
   echo "" >> /usr/sbin/hotspot
   echo "sa818 --port /dev/ttyAMA0 volume --level ${CPVOL}" >> /usr/sbin/hotspot
   if [[ "${CTCSSTX}" == "Yes" ]]; then
-    echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --tail close" >> /usr/sbin/hotspot
+    echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss ${TONE},${TONE} --tail close --squelch 8" >> /usr/sbin/hotspot
   else
     echo "sa818 --port /dev/ttyAMA0 radio --frequency ${FREQ} --ctcss 0,${TONE} --tail close" >> /usr/sbin/hotspot
   fi
