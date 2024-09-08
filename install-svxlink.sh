@@ -93,6 +93,14 @@ say "Installing default configurations"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf"
 run "cat svxlink.conf > /etc/svxlink/svxlink.conf.orig"
 
+say "Install fmchip-monitor"
+run "cp fmchip-monitor.py /usr/sbin/fmchip-monitor"
+run "chmod +x /usr/sbin/fmchip-monitor"
+
+say "Install fmchip-monitor.service"
+run "cp fmchip-monitor.service /lib/systemd/system/fmchip-monitor.service"
+run "systemctl enable fmchip-monitor"
+
 say "Installing systemd services"
 run "systemctl enable svxlink"
 
