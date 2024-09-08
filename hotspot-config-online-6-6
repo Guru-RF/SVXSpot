@@ -2,6 +2,14 @@
 
 TERM=xterm-256color
 
+grep SQL_DET=CTCSS /etc/svxlink/svxlink.conf 2>&1 > /dev/null
+if [ "$?" -ne 0 ]
+then
+  echo "Your image is outdated please upgrade !!!"
+  exit;
+fi
+
+
 run() {
   exec=$1
   printf "\x1b[38;5;104m --> ${exec}\x1b[39m\n"
