@@ -180,13 +180,6 @@ fi
 TGS=$(gum input --value "${OLDTGS}")
 gum style --foreground 212 "${TGS}"
 
-gum style --foreground "#04B575" "Enter QSY timeout [10-15] (-1 to disable):"
-QSYTIMEOUT=$(gum input --value="${QSYTIMEOUT}")
-if [[ "${QSYTIMEOUT}" == "" ]]; then
-  QSYTIMEOUT=15
-fi
-gum style --foreground 212 -- "${QSYTIMEOUT}"
-
 gum style --foreground "#04B575" "Enter AF output volume [50-80] (default 80):"
 AFVOL=$(gum input --value "${OLDAFVOL}")
 if [[ "${AFVOL}" == "" ]]; then
@@ -233,7 +226,6 @@ if [ $RESULT -eq 0 ]; then
 	perl -i -pe "s/--CALL--/${CALL}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--SVXCALL--/${SVXCALL}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--SVXPWD--/${SVXPWD}/g" /etc/svxlink/svxlink.conf
-	perl -i -pe "s/--QSYTIMEOUT--/${QSYTIMEOUT}/g" /etc/svxlink/svxlink.conf
 	perl -i -pe "s/--LOCATION--/${LOCATION}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LAT--/${LAT}/g" /etc/svxlink/node_info.json
 	perl -i -pe "s/--LON--/${LON}/g" /etc/svxlink/node_info.json

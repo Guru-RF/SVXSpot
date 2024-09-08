@@ -1,0 +1,11 @@
+[Unit]
+Description=FM Chip Monitor
+After=svxlink.service
+
+[Service]
+ExecStart=/usr/sbin/fmchip-monitor
+Restart=on-failure
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
