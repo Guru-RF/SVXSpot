@@ -243,13 +243,13 @@ if [ $RESULT -eq 0 ]; then
   say "Configuring hotspot"
   echo "#!/bin/bash" > /usr/sbin/hotspot
   echo "" >> /usr/sbin/hotspot
-  echo "sa818 --port /dev/ttyAMA0 volume --level ${CPVOL}" >> /usr/sbin/hotspot
   if [[ "${CTCSSTX}" == "Yes" ]]; then
     echo "sa818 --port /dev/ttyAMA0 radio --bw 0 --frequency ${FREQ} --ctcss ${TONE},${TONE} --tail close --squelch 8" >> /usr/sbin/hotspot
   else
     echo "sa818 --port /dev/ttyAMA0 radio --bw 0 --frequency ${FREQ} --ctcss 0,${TONE} --tail close" >> /usr/sbin/hotspot
   fi
   echo "sa818 --port /dev/ttyAMA0 filters --emphasis enable --highpass disable --lowpass disable" >> /usr/sbin/hotspot
+  echo "sa818 --port /dev/ttyAMA0 volume --level ${CPVOL}" >> /usr/sbin/hotspot
 	chmod +x /usr/sbin/hotspot
   /usr/sbin/hotspot
   say "Configuring hotspot volume"
