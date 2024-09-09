@@ -219,6 +219,10 @@ if [ $RESULT -eq 0 ]; then
   run "rm -f /tmp/svxlink.conf"
   say "Downloading latest sa818 firmware module"
   run "wget -O /usr/local/bin/sa818 https://raw.githubusercontent.com/Guru-RF/SA818/main/sa818.py > /dev/null 2>&1"
+  run "chmod +x /usr/local/bin/sa818"
+  say "Downloading fmchip-monitor"
+  run "wget -O /usr/sbin/fmchip-monitor https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/fmchip-monitor.py > /dev/null 2>&1"
+  run "chmod +x /usr/sbin/fmchip-monitor"
   say "Downloading latest config template"
   run "wget -O /tmp/svxlink.conf https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/svxlink-6.6.conf > /dev/null 2>&1"
   run "wget -O /tmp/node_info.json https://raw.githubusercontent.com/Guru-RF/SVXSpot/master/node_info.json > /dev/null 2>&1"
@@ -273,6 +277,7 @@ amixer cset iface=MIXER,name='ALC Min Gain' 0
 amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotspot_volume
   /usr/sbin/hotspot_volume > /dev/null 2>&1
 	systemctl restart svxlink
+	systemctl restart fmchip-monitor
   say "Send CTCSS ${TONE} to ${FREQ} with D1# to activate the parrot (to test audio levels)"
   say "Send CTCSS ${TONE} to ${FREQ} once activate the repeater talkgroup TG8, next PTT you are life on the repeater network !"
   say "You here a small two-tone when we are back in listening mode on TG0, when there is traffic on TG8 it will be automaticaly activated !"

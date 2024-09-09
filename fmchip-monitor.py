@@ -7,4 +7,4 @@ while True:
     line = f.stdout.readline()
     if 'Turning the transmitter OFF' in str(line):
       print("Reset FM Chip")
-      subprocess.run(["/usr/sbin/hotspot"])
+      subprocess.run(["sa818","--port", "/dev/ttyAMA0", "filters", "--emphasis", "disable", "--highpass", "disable", "--lowpass", "disable"])
