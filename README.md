@@ -32,8 +32,8 @@ The RF 50 ohm output requires an antenna with a SWR (Standing Wave Ratio) of les
 
 # Power
 
-UBS1/2 is only rated for 0.5Amps ... so do not connect the hotspot to such port on your computer/laptop ... it will porpably not work !
-USB3 port (blue connector) has enough power (0.9Amps) to drive the hotspot !
+- UBS1/2 is only rated for 0.5Amps ... so do not connect the hotspot to such port on your computer/laptop ... it will porpably not work !
+- USB3 port (blue connector) has enough power (0.9Amps) to drive the hotspot !
 
 # Barebone
 
