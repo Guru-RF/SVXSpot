@@ -41,9 +41,9 @@ If you prefer to handle everything manually, you can find the necessary resource
 
 [Bookworm Image 2024-09-09](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-09-09.img.gz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
 
-*The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!
+*The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!*
 
-This firmware also introduces talk group mapping to CTCSS tones, this is much easier to switch talk groups and also works for radio's lacking dtmf macros!*
+*This firmware also introduces talk group mapping to CTCSS tones, this is much easier to switch talk groups and also works for radio's lacking dtmf macros!*
 
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
@@ -73,17 +73,17 @@ https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a
 
 The chip has a deviation of 5khz ... for best audio experience send with Wide FM (FM), it will sound better/you will sound better !
 
-To activate the default talk group, just press PTT once, the second PTT will go to the network.
-
-To activate another talk group send DTMF 91 talkgroup #
-
-To leave the active talk group send DTMF 91 0 #
+To activate the default talk group, send the approriate CTCSS tone when in TG0 this will open the talkgroup you can speak directly !.
 
 To get the current ip address send DTMF D911#
 
-To specify various talkgroups for monitoring within the 'hotspot-config', you can indicate them as follows: 8++,23+,50,51,52,53,54,55 
+To specify various talkgroups for monitoring within the 'hotspot-config', you can indicate them as follows: 8++,23+,50,51,52,53,54,55
 
 The plus signs denote priority levels.
+
+Talk group mapping via CTCSS: <tone>:<talkgroup>,<tone>:<talkgroup>,....
+
+example (default): 67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
