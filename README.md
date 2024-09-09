@@ -41,7 +41,9 @@ If you prefer to handle everything manually, you can find the necessary resource
 
 [Bookworm Image 2024-09-09](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-09-09.img.gz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
 
-*The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!*
+*The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!
+
+This firmware also introduces talk group mapping to CTCSS tones, this is much easier to switch talk groups and also works for radio's lacking dtmf macros!*
 
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
