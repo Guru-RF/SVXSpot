@@ -43,7 +43,7 @@ If you prefer to handle everything manually, you can find the necessary resource
 
 *The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!*
 
-*This firmware now includes talk group mapping to CTCSS tones, making it much easier to switch between talk groups. It also works for radios without DTMF macros! The TX CTCSS tone remains fixed across all talk groups, while the RX tone is variable and can be configured through the mapping settings in the configurator, the TX tone is also configurable in the configurator.*
+*This firmware now includes talk group mapping to CTCSS tones, making it much easier to switch between talk groups. It also works for radios without DTMF macros! The TX CTCSS tone remains fixed across all talk groups, while the RX tone is variable and can be configured through the mapping settings in the configurator, the TX tone (fixed for all talkgroups) is also configurable in the configurator.*
 
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
