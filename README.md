@@ -81,9 +81,9 @@ To set up multiple talk groups for monitoring, configure them within the 'hotspo
 
 The plus signs denote priority levels.
 
-Talk group mapping via CTCSS: <tone>:<talkgroup>,<tone>:<talkgroup>,....
+Talk group mapping via CTCSS: tone:talkgroup,tone:talkgroup,....
 
-example (default): 67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55
+example ctcss mapping (default): 67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
