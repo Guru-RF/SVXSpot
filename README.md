@@ -30,6 +30,11 @@ The hotspot is not suitable for connecting an outdoor antenna because it lacks a
 
 The RF 50 ohm output requires an antenna with a SWR (Standing Wave Ratio) of less than 4:1, which is considered reasonable. If you experience sound distortion, it could indicate that the antenna being used has a high SWR, leading to common-mode currents that may affect the RF chip. To test, use a 50-ohm dummy load (for UHF) and consider using a more suitable antenna. We recommend and sell antennas that work without any issues.
 
+# Power
+
+UBS1/2 is only rated for 0.5Amps ... so do not connect the hotspot to such port on your computer/laptop ... it will porpably not work !
+USB3 port (blue connector) has enough power (0.9Amps) to drive the hotspot !
+
 # Barebone
 
 If you prefer to handle everything manually, you can find the necessary resources here:
