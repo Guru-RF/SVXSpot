@@ -41,6 +41,8 @@ If you prefer to handle everything manually, you can find the necessary resource
 
 [Bookworm Image 2024-09-09](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-09-09.img.gz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
 
+*The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!*
+
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
 You can set username/password and wifi credentials in the Raspberry PI Imager tool ... there is no default username/password !
@@ -67,7 +69,7 @@ https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a
 
 # SVXLink quick mini HOW-TO
 
-The chip has a deviation of 2.5khz ... for best audio experience send with Narrow FM (FM-N), it will sound better/you will sound better !
+The chip has a deviation of 5khz ... for best audio experience send with Wide FM (FM), it will sound better/you will sound better !
 
 To activate the default talk group, just press PTT once, the second PTT will go to the network.
 
