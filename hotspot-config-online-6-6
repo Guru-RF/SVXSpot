@@ -278,7 +278,7 @@ amixer cset iface=MIXER,name='ADC High Pass Filter Switch' 0" >> /usr/sbin/hotsp
 	systemctl restart fmchip-monitor
   say "Send any CTCSS tone to ${FREQ} with D1# to activate the parrot (to test audio levels)"
   say "Send CTCSS tone mapped to a channel to switch talkgroup (only when there is no traffic and you are in TG0)"
-  say "You here a small two-tone when we are back in listening mode on TG0, when there is traffic on TG8 it will be automaticaly activated !"
+  say "You here a small two-tone when we are back in listening mode on TG0, when there is traffic on a monitored it will be automaticaly activated !"
 else
 gum style --foreground "#04B575" "Abort!"
 fi
