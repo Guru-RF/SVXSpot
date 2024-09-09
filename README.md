@@ -73,11 +73,11 @@ https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a
 
 The chip has a deviation of 5khz ... for best audio experience send with Wide FM (FM), it will sound better/you will sound better !
 
-To activate the default talk group, send the approriate CTCSS tone when in TG0 this will open the talkgroup you can speak directly !.
+To activate a talk group, simply send the corresponding CTCSS tone from the mapping while in TG0 (you'll hear the bleep tone 15 seconds after a QSO). This will instantly open the talk group—no need for double presses like before. In other words, you can start speaking right away!
 
 To get the current ip address send DTMF D911#
 
-To specify various talkgroups for monitoring within the 'hotspot-config', you can indicate them as follows: 8++,23+,50,51,52,53,54,55 (the TX ctcss of the hotspot is the same for each talkgroup)
+To set up multiple talk groups for monitoring, configure them within the 'hotspot-config' using this format: 8++, 23+, 50, 51, 52, 53, 54, 55. Note that the TX CTCSS tone for the hotspot remains the same across all talk groups.
 
 The plus signs denote priority levels.
 
