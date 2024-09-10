@@ -30,6 +30,11 @@ The hotspot is not suitable for connecting an outdoor antenna because it lacks a
 
 The RF 50 ohm output requires an antenna with a SWR (Standing Wave Ratio) of less than 4:1, which is considered reasonable. If you experience sound distortion, it could indicate that the antenna being used has a high SWR, leading to common-mode currents that may affect the RF chip. To test, use a 50-ohm dummy load (for UHF) and consider using a more suitable antenna. We recommend and sell antennas that work without any issues.
 
+# Power
+
+- UBS1/2 is only rated for 0.5Amps ... so do not connect the hotspot to such port on your computer/laptop ... it will porpably not work !
+- USB3 port (blue connector) has enough power (0.9Amps) to drive the hotspot !
+
 # Barebone
 
 If you prefer to handle everything manually, you can find the necessary resources here:
@@ -42,6 +47,8 @@ If you prefer to handle everything manually, you can find the necessary resource
 [Bookworm Image 2024-09-09](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-09-09.img.gz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
 
 *The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!*
+
+*This firmware now includes talk group mapping to CTCSS tones, making it much easier to switch between talk groups. It also works for radios without DTMF macros! The TX CTCSS tone remains fixed across all talk groups, while the RX tone is variable and can be configured through the mapping settings in the configurator, the TX tone (fixed for all talkgroups) is also configurable in the configurator.*
 
 Utilize PI-Imager to write the image to your MicroSD card! **Don't use svxlink or svxspot as a username, these are system usernames, using them will result in a broken installation !**
 
@@ -71,17 +78,17 @@ https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a
 
 The chip has a deviation of 5khz ... for best audio experience send with Wide FM (FM), it will sound better/you will sound better !
 
-To activate the default talk group, just press PTT once, the second PTT will go to the network.
-
-To activate another talk group send DTMF 91 talkgroup #
-
-To leave the active talk group send DTMF 91 0 #
+To activate a talk group, simply send the corresponding CTCSS tone from the mapping while in TG0 (you'll hear the bleep tone 15 seconds after a QSO). This will instantly open the talk group—no need for double presses like before. In other words, you can start speaking right away!
 
 To get the current ip address send DTMF D911#
 
-To specify various talkgroups for monitoring within the 'hotspot-config', you can indicate them as follows: 8++,23+,50,51,52,53,54,55 
+To set up multiple talk groups for monitoring, configure them within the 'hotspot-config' using this format: 8++, 23+, 50, 51, 52, 53, 54, 55. Note that the TX CTCSS tone for the hotspot remains the same across all talk groups.
 
 The plus signs denote priority levels.
+
+Talk group mapping via CTCSS: tone:talkgroup,tone:talkgroup,....
+
+example ctcss mapping (default): 67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
