@@ -75,28 +75,56 @@ as illustrated in this video:
 https://github.com/Guru-RF/SVXSpot/assets/1251767/e36c240f-1fa5-447f-9a3a-93d46a942cdd
 
 # SVXLink quick mini HOW-TO
+# Hotspot Configuration and Talkgroup Activation Guide
 
-The chip has a deviation of 5khz ... for best audio experience send with Wide FM (FM), it will sound better/you will sound better !
+### **Audio Settings**  
+The chip has a **5 kHz deviation**. For the **best audio experience**, transmit using **Wide FM (FM)** – it will sound much better, and so will you!
 
-To activate a talk group, simply send the corresponding CTCSS tone from the mapping while in TG0 (you'll hear the bleep tone 15 seconds after a QSO). This will instantly open the talk group—no need for double presses like before. In other words, you can start speaking right away!
+---
 
-To get the current ip address send DTMF D911#
+### **Activating a Talkgroup**  
+To activate a talkgroup, send the corresponding **CTCSS tone** from the mapping while in **TG0**.  
 
-To set up multiple talk groups for monitoring, configure them within the 'hotspot-config' using this format: 8++, 23+, 50, 51, 52, 53, 54, 55. Note that the TX CTCSS tone for the hotspot remains the same across all talk groups.
+- You’ll hear a **bleep tone** 15 seconds after a QSO.  
+- This will instantly open the talkgroup – no need for double presses like before.  
+- You can start speaking **immediately**!  
 
-If you want a default TG ... you monitor one ... you can temporary motintor a tg by sending DTMF 94<tg># ... so to monitor TG23 send 9423#
+---
 
-The plus signs denote priority levels.
+### **Retrieving the Current IP Address**  
+To get the current IP address of the hotspot, send:  DTMF D911#
 
-Talk group mapping via CTCSS: tone:talkgroup,tone:talkgroup,....
+---
 
-example ctcss mapping (default): 67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55
+### **Monitoring Multiple Talkgroups**  
+To set up multiple talkgroups for monitoring, configure them in the `hotspot-config` using this format:  8++, 23+, 50, 51, 52, 53, 54, 55
 
-if you want only one talkgroup ... or switch with DTMF or the portal ... you can map only one defaul talkgroup via <CTCSS>:<tg> ... 88.5:8 for example maps ctcss 88.5 to talkgroup 8
+- The **TX CTCSS tone** remains the same across all talkgroups.  
+- The **plus signs (+)** indicate **priority levels**.  
 
-The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
+**Temporarily Monitor a Talkgroup:**  
+To temporarily monitor another talkgroup, send:  DTMF 94<tg>#
 
-# Configuring additional WiFi
+For example, to monitor TG23: 9423# 
+
+---
+
+### **CTCSS Talkgroup Mapping**  
+You can map talkgroups via CTCSS tones using the following format:  tone:talkgroup, tone:talkgroup, …
+**Example Default Mapping:**  
+67.0:8400, 69.3:8, 71.9:23, 74.4:9000, 77.0:50, 79.7:51, 82.5:52, 85.4:53, 88.5:54, 91.5:55
+
+**Mapping a Single Default Talkgroup:**  
+If you want only one default talkgroup or plan to switch via **DTMF** or the portal, map it like this:  88.5:8
+This maps CTCSS tone **88.5** to talkgroup **8**.
+---
+
+### **Accessing the Local Portal**  
+The hotspot also has a **local portal**. You can access it:  
+- Via its **hostname** (if your network supports it).  
+- Or directly via its **IP address**.
+
+---
 
 For adding additional (wifi) networks you can use the
 ```console
