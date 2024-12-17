@@ -84,11 +84,15 @@ To get the current ip address send DTMF D911#
 
 To set up multiple talk groups for monitoring, configure them within the 'hotspot-config' using this format: 8++, 23+, 50, 51, 52, 53, 54, 55. Note that the TX CTCSS tone for the hotspot remains the same across all talk groups.
 
+If you want a default TG ... you monitor one ... you can temporary motintor a tg by sending DTMF 94<tg># ... so to monitor TG23 send 9423#
+
 The plus signs denote priority levels.
 
 Talk group mapping via CTCSS: tone:talkgroup,tone:talkgroup,....
 
 example ctcss mapping (default): 67.0:8400,69.3:8,71.9:23,74.4:9000,77.0:50,79.7:51,82.5:52,85.4:53,88.5:54,91.5:55
+
+if you want only one talkgroup ... or switch with DTMF or the portal ... you can map only one defaul talkgroup via <CTCSS>:<tg> ... 88.5:8 for example maps ctcss 88.5 to talkgroup 8
 
 The hotspot also has a local portal you can access it via it's hostname if you network support this or via his ip adress.
 
