@@ -1,8 +1,8 @@
 # SVXSpot an SVXLink Analog Hotspot for the Raspberry Pi Zero 
 
-[RF.Guru Analog Hotspot 70CM (UHF)](https://shop.rf.guru/products/2023-p-041-u) 500mW Power
+[RF.Guru Analog Hotspot 70CM (UHF)](https://shop.rf.guru/products/2025-ce-041-u) 100mW Power
 
-[RF.Guru Analog Hotspot 2M (VHF)](https://shop.rf.guru/products/2023-p-041-v) 500mW Power
+[RF.Guru Analog Hotspot 2M (VHF)](https://shop.rf.guru/products/2025-ce-041-v) 100mW Power
 
 [RF.Guru Analog Transceiver 70CM (UHF)](https://shop.rf.guru/products/2023-p-141-u) 1.3W Power (added a Low Pass filter) needs additinal power best used with an external power source like [RF.Guru 
  Pi Zero PSU](https://shop.rf.guru/products/2021-p-053)
