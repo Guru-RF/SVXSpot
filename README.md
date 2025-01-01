@@ -102,7 +102,7 @@ To set up multiple talkgroups for monitoring, configure them in the `hotspot-con
 - The **TX CTCSS tone** remains the same across all talkgroups.  
 - The **plus signs (+)** indicate **priority levels**.  
 
-**Temporarily Monitor a Talkgroup:**  
+**Temporarily Monitor (for an hour) a Talkgroup:**  
 To temporarily monitor another talkgroup, send:  DTMF 94<tg>#
 
 For example, to monitor TG23: 9423# 
