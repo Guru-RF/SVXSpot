@@ -18,6 +18,18 @@ say () {
   printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
 }
 
+systemctl stop fmchip-monitor
+CHIPVERSION=$(sa818 --port /dev/ttyAMA0 version 2>&1 | awk '{print $6}')
+if [[ "${CHIPVERSION}" == "V1.2" ]]; then
+  say "CHIP version V1.2 detected disabling chip monitor"
+  systemctl stop fmchip-monitor
+  systemctl disable fmchip-monitor
+else
+  say "old CHIP version detected enabling chip monitor"
+  systemctl enable fmchip-monitor
+  systemctl start fmchip-monitor
+fi
+
 OLDCPVOL=$(grep volume /usr/sbin/hotspot | awk '{ print $6}'| tail -n 1)
 OLDRFVOL=$(grep Capture /usr/sbin/hotspot_volume | awk '{ print $4}'| tail -n 1 | sed 's/%$//')
 OLDAFVOL=$(grep Headphone /usr/sbin/hotspot_volume | awk '{ print $4}'| tail -n 1 | sed 's/%$//')
