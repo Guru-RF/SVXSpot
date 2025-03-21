@@ -87,7 +87,9 @@ To activate a talkgroup, send the corresponding **CTCSS tone** from the mapping 
 
 - You’ll hear a **bleep tone** 15 seconds after a QSO.  
 - This will instantly open the talkgroup – no need for double presses like before.  
-- You can start speaking **immediately**!  
+- You can start speaking **immediately**!
+
+Alternatively you can you use DTMF 91<TALKGROUP>#
 
 ---
 
