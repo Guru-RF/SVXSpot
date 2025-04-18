@@ -44,6 +44,10 @@ If you prefer to handle everything manually, you can find the necessary resource
 
 # SVXLink Bookworm Image
 
+We are switching over to the main tree ... you can find information over here
+[SVXSpotMain](https://github.com/Guru-RF/SVXSpotMain)
+, the information beneeth is still valid and you should read it,
+
 [Bookworm Image 2024-09-09](https://storage.googleapis.com/rf-guru/rpi-images/hotspot-2024-09-09.img.gz) (only for Raspberry Pi Zero 2W, Raspberry Pi 4 and Raspberry Pi 5)
 
 *The firmware version released on 2024-09-09 now handles CTCSS decoding through software. Previously, some users encountered a significant bug in the FM chip’s CTCSS decoding, leading to random false detections. If you’re using an earlier version, we strongly recommend upgrading!*
