@@ -191,6 +191,11 @@ sudo reboot
 You need to go to Personal Hotspot setting until the hotspot is connected, there is no option on the iPhone/iPad to have the SSID beeing broadcasted all the time.
 Once connected it works like a charm.
 
+# Logs
+```console
+sudo tail -f /var/log/svxlink
+```
+
 # Running the main tree 
 
 Our image is built on the stable release tree. We often receive requests for a “new version,” but such a version doesn’t exist. What some refer to as the “new version” is actually the main development tree, which is considered unstable.
