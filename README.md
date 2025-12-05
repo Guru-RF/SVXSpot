@@ -1,3 +1,15 @@
+# Development moved
+[https://github.com/Guru-RF/Analog-HotSPOT-SVXLink](https://github.com/Guru-RF/Analog-HotSPOT-SVXLink)
+
+
+
+
+
+
+
+
+
+
 # SVXSpot an SVXLink Analog Hotspot for the Raspberry Pi Zero 
 
 [RF.Guru Analog Hotspot 70CM (UHF)](https://shop.rf.guru/products/2025-ce-041-u) 100mW Power
