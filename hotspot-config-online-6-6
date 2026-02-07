@@ -1,6 +1,9 @@
 
 TERM=xterm-256color
 
+echo "version outdated look here: https://github.com/Guru-RF/Analog-HotSPOT-SVXLink"
+exit;
+
 FILE=/usr/sbin/fmchip-monitor
 if [ ! -f $FILE ]; then
   echo "Your image is outdated please upgrade !!!"
