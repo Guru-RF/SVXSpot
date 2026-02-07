@@ -11,6 +11,9 @@ say () {
   printf "\x1b[38;5;220m${say}\x1b[38;5;255m\n"
 }
 
+echo "version outdated look here: https://github.com/Guru-RF/Analog-HotSPOT-SVXLink"
+exit;
+
 EPOCH=$(date +%s)
 KERNEL=$(uname -r)
 
